@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A luxury romantic one-day invitation to Gopalaswamy Betta and Bandipur Safari for Pooja." />
+  <title>A Day Above The Clouds With My Future Wife ❤️</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --pink: #ff6ea9;
+      --hot-pink: #ff2f86;
+      --red: #ff3158;
+      --gold: #ffd166;
+      --sunset: #ff9f1c;
+      --white: #fffafc;
+      --muted: rgba(255, 255, 255, 0.78);
+      --dark: #07030b;
+      --glass: rgba(255, 255, 255, 0.13);
+      --glass-border: rgba(255, 255, 255, 0.24);
+      --shadow: 0 30px 90px rgba(0, 0, 0, 0.48);
+      --glow: 0 0 28px rgba(255, 110, 169, 0.58), 0 0 80px rgba(255, 209, 102, 0.18);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      color: var(--white);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--dark);
+    }
+    body.entered { overflow-x: hidden; overflow-y: auto; }
+    body.modal-open { overflow: hidden; }
+    body.modal-open main, body.modal-open .music-toggle { filter: blur(8px); pointer-events: none; }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      background: linear-gradient(135deg, rgba(7, 3, 11, 0.9), rgba(48, 4, 34, 0.62)),
+        url("https://images.unsplash.com/photo-1542385150-f38b5d38ccb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=85") center/cover no-repeat;
+      transform: scale(1.03);
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255, 110, 169, 0.26), transparent 28%),
+        radial-gradient(circle at 78% 12%, rgba(255, 209, 102, 0.2), transparent 26%),
+        radial-gradient(circle at 50% 82%, rgba(255, 49, 88, 0.18), transparent 30%),
+        rgba(0, 0, 0, 0.44);
+      pointer-events: none;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button { font: inherit; }
+
+    .hero-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: grid;
+      place-items: center;
+      min-height: 100dvh;
+      isolation: isolate;
+      overflow: hidden;
+      background: #000;
+      transition: opacity 1.15s ease, visibility 1.15s ease, transform 1.15s ease;
+    }
+    .hero-overlay.hidden { opacity: 0; visibility: hidden; transform: scale(1.04); pointer-events: none; }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      z-index: -4;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: heroFade 18s infinite;
+      filter: saturate(1.12) contrast(1.08);
+    }
+    .hero-slide:nth-child(1) { background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=85"); animation-delay: 0s; }
+    .hero-slide:nth-child(2) { background-image: url("https://imgd.aeplcdn.com/664x374/n/k6tblib_1902685.jpg?q=80"); animation-delay: 6s; }
+    .hero-slide:nth-child(3) { background-image: url("https://www.tirthayatra.org/wp-content/uploads/2022/01/10-scaled.jpg"); animation-delay: 12s; }
+    .hero-overlay::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background: linear-gradient(180deg, rgba(0,0,0,.72), rgba(24,0,20,.58), rgba(0,0,0,.82));
+    }
+    .hero-overlay::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-image: radial-gradient(rgba(255,255,255,.34) 1px, transparent 1px);
+      background-size: 38px 38px;
+      opacity: .18;
+    }
+    @keyframes heroFade { 0%, 38% { opacity: 1; transform: scale(1); } 48%, 100% { opacity: 0; transform: scale(1.08); } }
+
+    .cloud {
+      position: absolute;
+      width: var(--w);
+      height: calc(var(--w) * .33);
+      top: var(--top);
+      left: -35vw;
+      z-index: -1;
+      opacity: var(--o);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.74);
+      filter: blur(7px);
+      animation: cloudDrift var(--dur) linear infinite;
+      animation-delay: var(--delay);
+    }
+    .cloud::before, .cloud::after { content: ""; position: absolute; border-radius: 50%; background: inherit; }
+    .cloud::before { width: 42%; height: 125%; left: 14%; bottom: 22%; }
+    .cloud::after { width: 52%; height: 155%; right: 12%; bottom: 12%; }
+    @keyframes cloudDrift { to { transform: translateX(150vw) translateY(var(--y)); } }
+
+    .hero-card {
+      width: min(92vw, 900px);
+      padding: clamp(32px, 6vw, 70px);
+      text-align: center;
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 42px;
+      background: linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.05));
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.2);
+      backdrop-filter: blur(18px);
+      animation: floatHero 5s ease-in-out infinite;
+    }
+    @keyframes floatHero { 50% { transform: translateY(-12px); } }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 18px;
+      padding: 9px 16px;
+      border: 1px solid rgba(255, 209, 102, .42);
+      border-radius: 999px;
+      color: var(--gold);
+      background: rgba(255, 209, 102, .09);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-size: .76rem;
+      font-weight: 800;
+    }
+    h1, h2, h3 { font-family: "Cormorant Garamond", serif; line-height: 1.04; }
+    .hero-card h1 {
+      font-size: clamp(3.15rem, 9vw, 7.6rem);
+      font-family: "Great Vibes", cursive;
+      font-weight: 400;
+      text-shadow: 0 0 32px rgba(255, 110, 169, .72);
+    }
+    .hero-card .subtitle { margin-top: 14px; color: rgba(255,255,255,.9); font-size: clamp(1rem, 2.7vw, 1.45rem); font-weight: 600; }
+    .typing {
+      display: inline-block;
+      margin: 28px auto 34px;
+      max-width: 100%;
+      overflow: hidden;
+      border-right: 3px solid var(--gold);
+      color: var(--gold);
+      white-space: nowrap;
+      font-size: clamp(1.05rem, 3vw, 1.75rem);
+      font-weight: 800;
+      animation: typing 4s steps(35, end) infinite alternate, blink .8s step-end infinite;
+    }
+    @keyframes typing { from { width: 0; } to { width: 35ch; } }
+    @keyframes blink { 50% { border-color: transparent; } }
+
+    .btn {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 999px;
+      padding: 15px 26px;
+      cursor: pointer;
+      color: white;
+      font-weight: 900;
+      text-decoration: none;
+      background: linear-gradient(135deg, var(--hot-pink), var(--red), var(--sunset));
+      box-shadow: 0 18px 42px rgba(255, 47, 134, .35), inset 0 1px 0 rgba(255,255,255,.35);
+      transition: transform .28s ease, box-shadow .28s ease, filter .28s ease;
+      overflow: hidden;
+    }
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
+      transform: translateX(-130%) skewX(-18deg);
+      transition: transform .8s ease;
+    }
+    .btn:hover { transform: translateY(-4px) scale(1.03); box-shadow: var(--glow); filter: brightness(1.08); }
+    .btn:hover::before { transform: translateX(130%) skewX(-18deg); }
+    .btn.secondary { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.26); }
+
+    main { opacity: 0; transition: opacity 1s ease .35s; }
+    body.entered main { opacity: 1; }
+    .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+    section { padding: clamp(70px, 10vw, 120px) 0; }
+    .section-title { text-align: center; margin-bottom: 34px; }
+    .section-title h2 { font-size: clamp(2.35rem, 6vw, 5rem); text-shadow: 0 0 20px rgba(255,255,255,.22); }
+    .section-title p { width: min(760px, 100%); margin: 14px auto 0; color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
+    .glass {
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(145deg, rgba(255,255,255,.15), rgba(255,255,255,.07));
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.18);
+      backdrop-filter: blur(20px);
+    }
+    .countdown-card { padding: clamp(24px, 5vw, 46px); text-align: center; }
+    .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 26px; }
+    .time-box {
+      padding: 24px 10px;
+      border-radius: 24px;
+      background: rgba(0,0,0,.36);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: inset 0 0 28px rgba(255,110,169,.08);
+    }
+    .time-box span { display: block; color: var(--gold); font-size: clamp(2rem, 6vw, 4.7rem); font-weight: 900; text-shadow: 0 0 22px rgba(255, 209, 102, .3); animation: pulseText 1s ease infinite alternate; }
+    .time-box small { color: white; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; }
+    @keyframes pulseText { to { transform: scale(1.035); } }
+
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 56px); align-items: center; }
+    .content-card { padding: clamp(24px, 4vw, 42px); }
+    .content-card h2 { font-size: clamp(2.1rem, 5vw, 4rem); color: #fff; }
+    .content-card p, .content-card li { color: rgba(255,255,255,.9); line-height: 1.82; font-size: 1.06rem; }
+    .feature-list { margin-top: 18px; list-style: none; display: grid; gap: 12px; }
+    .feature-list li { padding: 13px 16px; border-radius: 16px; background: rgba(0,0,0,.27); border: 1px solid rgba(255,255,255,.14); }
+    .image-frame { overflow: hidden; border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,.26); box-shadow: var(--shadow); min-height: 360px; }
+    .image-frame img { width: 100%; height: 100%; min-height: 360px; object-fit: cover; transition: transform 1s ease; }
+    .image-frame:hover img { transform: scale(1.08); }
+
+    .carousel { position: relative; overflow: hidden; border-radius: var(--radius-xl); }
+    .carousel-track { display: flex; transition: transform .8s cubic-bezier(.22,1,.36,1); }
+    .slide { min-width: 100%; position: relative; height: clamp(340px, 55vw, 620px); overflow: hidden; }
+    .slide img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s ease; }
+    .slide:hover img { transform: scale(1.08); }
+    .slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 42%, rgba(0,0,0,.78)); }
+    .caption { position: absolute; left: clamp(18px, 4vw, 44px); bottom: clamp(18px, 4vw, 42px); z-index: 2; font-size: clamp(1.25rem, 4vw, 2.5rem); font-family: "Cormorant Garamond", serif; font-weight: 800; text-shadow: 0 6px 20px black; }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 3;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 50%;
+      color: white;
+      background: rgba(0,0,0,.42);
+      cursor: pointer;
+      transform: translateY(-50%);
+      backdrop-filter: blur(10px);
+      transition: .25s ease;
+    }
+    .arrow:hover { background: var(--hot-pink); transform: translateY(-50%) scale(1.08); }
+    .prev { left: 18px; } .next { right: 18px; }
+    .dots { position: absolute; left: 50%; bottom: 18px; z-index: 4; display: flex; gap: 9px; transform: translateX(-50%); }
+    .dot { width: 10px; height: 10px; border: 0; border-radius: 50%; background: rgba(255,255,255,.45); cursor: pointer; transition: .25s; }
+    .dot.active { width: 30px; border-radius: 999px; background: var(--gold); }
+
+    .timeline { position: relative; display: grid; gap: 22px; width: min(920px, 100%); margin: 0 auto; }
+    .timeline::before { content: ""; position: absolute; left: 18px; top: 12px; bottom: 12px; width: 2px; background: linear-gradient(var(--pink), var(--gold), var(--red)); box-shadow: var(--glow); }
+    .timeline-card {
+      position: relative;
+      margin-left: 52px;
+      padding: 22px 24px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.2);
+      background: linear-gradient(135deg, rgba(3,3,10,.82), rgba(42,3,28,.78));
+      box-shadow: 0 20px 55px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.12);
+    }
+    .timeline-card::before { content: ""; position: absolute; left: -42px; top: 26px; width: 16px; height: 16px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 8px rgba(255,209,102,.12), var(--glow); }
+    .timeline-card time { display: block; margin-bottom: 8px; color: #fff; font-weight: 900; font-size: 1.12rem; text-shadow: 0 0 14px rgba(255,255,255,.54); }
+    .timeline-card p { color: #fff; line-height: 1.75; text-shadow: 0 0 12px rgba(255,255,255,.28); }
+
+    .safari-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .safari-card { padding: 34px 18px; text-align: center; border-radius: 26px; transition: .3s ease; }
+    .safari-card:hover { transform: translateY(-10px); box-shadow: var(--glow); }
+    .safari-card i { color: var(--gold); font-size: 2.7rem; margin-bottom: 18px; text-shadow: 0 0 18px rgba(255,209,102,.45); }
+    .safari-card h3 { font-size: 1.75rem; }
+
+    .map-wrap { overflow: hidden; padding: 10px; }
+    iframe { width: 100%; min-height: 430px; border: 0; border-radius: 26px; filter: saturate(1.1) contrast(1.05); }
+    .map-actions { display: flex; justify-content: center; margin-top: 22px; }
+
+    .letter-card {
+      width: min(880px, 100%);
+      margin: 0 auto;
+      padding: clamp(28px, 6vw, 64px);
+      border-radius: 18px;
+      color: #4f2431;
+      background:
+        linear-gradient(90deg, rgba(143,82,42,.08) 1px, transparent 1px),
+        linear-gradient(#fff8e9, #fff1d2);
+      background-size: 28px 28px, auto;
+      box-shadow: 0 30px 90px rgba(0,0,0,.42);
+      font-family: "Cormorant Garamond", serif;
+      position: relative;
+    }
+    .letter-card::before { content: "💌"; position: absolute; top: -28px; right: 28px; font-size: 3.2rem; filter: drop-shadow(0 8px 12px rgba(0,0,0,.28)); }
+    .letter-card p { font-size: clamp(1.25rem, 3vw, 1.75rem); line-height: 1.66; }
+    .signature { margin-top: 24px; font-family: "Great Vibes", cursive; font-size: clamp(2.2rem, 6vw, 4rem) !important; color: #d91552; }
+
+    .proposal { text-align: center; }
+    .proposal-actions { position: relative; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; min-height: 92px; margin-top: 28px; }
+    #noBtn { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.32); user-select: none; }
+    #noBtn.runaway { position: fixed; z-index: 21; transition: left .22s ease, top .22s ease, transform .22s ease; }
+
+    .music-toggle {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 30;
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 999px;
+      color: white;
+      background: rgba(0,0,0,.54);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 14px 36px rgba(0,0,0,.34);
+      cursor: pointer;
+      font-weight: 800;
+    }
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 90px;
+      z-index: 60;
+      padding: 14px 20px;
+      border-radius: 999px;
+      color: white;
+      background: linear-gradient(135deg, var(--hot-pink), var(--sunset));
+      box-shadow: var(--glow);
+      transform: translate(-50%, 28px);
+      opacity: 0;
+      pointer-events: none;
+      transition: .35s ease;
+      font-weight: 900;
+      text-align: center;
+    }
+    .toast.show { transform: translate(-50%, 0); opacity: 1; }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 55;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      background: rgba(0,0,0,.55);
+      opacity: 0;
+      visibility: hidden;
+      transition: .35s ease;
+    }
+    .modal-backdrop.show { opacity: 1; visibility: visible; }
+    .modal {
+      width: min(560px, 100%);
+      padding: clamp(28px, 5vw, 48px);
+      text-align: center;
+      transform: translateY(28px) scale(.96);
+      transition: .35s ease;
+    }
+    .modal-backdrop.show .modal { transform: translateY(0) scale(1); }
+    .modal h2 { font-size: clamp(3rem, 8vw, 5.4rem); color: var(--gold); text-shadow: var(--glow); }
+    .modal p { margin: 18px 0 28px; line-height: 1.75; color: white; }
+
+    .falling-layer { position: fixed; inset: 0; z-index: 54; pointer-events: none; overflow: hidden; }
+    .falling { position: absolute; top: -48px; font-size: 26px; animation: fall linear forwards; filter: drop-shadow(0 5px 12px rgba(0,0,0,.28)); }
+    @keyframes fall { to { transform: translateY(110vh) rotate(720deg); opacity: 0; } }
+
+    footer { padding: 34px 16px 90px; text-align: center; color: rgba(255,255,255,.74); }
+
+    @media (max-width: 850px) {
+      .split, .split.reverse { grid-template-columns: 1fr; }
+      .split.reverse .image-frame { order: -1; }
+      .countdown-grid { grid-template-columns: repeat(2, 1fr); }
+      .safari-grid { grid-template-columns: repeat(2, 1fr); }
+      .typing { white-space: normal; border-right: 0; animation: pulseText 1.8s ease-in-out infinite alternate; }
+    }
+    @media (max-width: 520px) {
+      .container { width: min(calc(100% - 22px), var(--max)); }
+      .hero-card { border-radius: 28px; }
+      .countdown-grid, .safari-grid { grid-template-columns: 1fr; }
+      .proposal-actions { align-items: center; flex-direction: column; }
+      .btn { width: 100%; max-width: 330px; }
+      .arrow { width: 42px; height: 42px; }
+      .music-toggle { left: 12px; right: 12px; width: auto; }
+      .toast { width: calc(100% - 24px); border-radius: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-overlay" id="heroOverlay" aria-label="Romantic intro screen">
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="cloud" style="--w: 270px; --top: 16%; --o: .28; --dur: 58s; --delay: -10s; --y: 24px;"></div>
+    <div class="cloud" style="--w: 430px; --top: 33%; --o: .18; --dur: 76s; --delay: -28s; --y: -16px;"></div>
+    <div class="cloud" style="--w: 340px; --top: 68%; --o: .20; --dur: 68s; --delay: -42s; --y: 18px;"></div>
+    <div class="cloud" style="--w: 210px; --top: 80%; --o: .24; --dur: 52s; --delay: -4s; --y: -28px;"></div>
+
+    <div class="hero-card">
+      <span class="eyebrow">Luxury Date Invitation</span>
+      <h1>To My Dearest Pooja ❤️</h1>
+      <p class="subtitle">I Have Planned A Magical Day Just For Us</p>
+      <div class="typing" aria-label="Clouds. Adventure. Love. Memories.">Clouds. Adventure. Love. Memories.</div>
+      <button class="btn" id="enterBtn">Enter Our Love Story ❤️</button>
+    </div>
+  </div>
+
+  <audio id="loveSong" preload="auto" loop title="Ninna Danigaagi">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+  </audio>
+  <button class="music-toggle" id="musicToggle" aria-pressed="false">🎵 Music Off</button>
+  <div class="toast" id="toast">Looks like destiny already chose YES ❤️</div>
+  <div class="falling-layer" id="fallingLayer" aria-hidden="true"></div>
+
+  <main id="pageContent">
+    <section id="countdown">
+      <div class="container">
+        <div class="countdown-card glass" data-aos="zoom-in">
+          <span class="eyebrow">15 June 2026 • 04:30 AM</span>
+          <div class="section-title" style="margin-bottom:0">
+            <h2>Our Adventure Begins In</h2>
+            <p>Every second is bringing us closer to clouds, forests, prayers, laughter, and one unforgettable day together.</p>
+          </div>
+          <div class="countdown-grid" aria-live="polite">
+            <div class="time-box"><span id="days">00</span><small>Days</small></div>
+            <div class="time-box"><span id="hours">00</span><small>Hours</small></div>
+            <div class="time-box"><span id="minutes">00</span><small>Minutes</small></div>
+            <div class="time-box"><span id="seconds">00</span><small>Seconds</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="chariot">
+      <div class="container split">
+        <div class="content-card glass" data-aos="fade-right">
+          <span class="eyebrow">Our Royal Chariot 🚘</span>
+          <h2>Deep Black. Dream Ready.</h2>
+          <p>Not horses. Not a golden carriage. Our Deep Black Skoda Kylaq will carry us through misty roads, dense forests, clouds, and beautiful memories. Let the scenic drive begin!</p>
+        </div>
+        <div class="image-frame" data-aos="fade-left">
+          <img src="https://imgd.aeplcdn.com/664x374/n/k6tblib_1902685.jpg?q=80" alt="Deep Black Skoda Kylaq" />
+        </div>
+      </div>
+    </section>
+
+    <section id="destination">
+      <div class="container split reverse">
+        <div class="image-frame" data-aos="fade-right">
+          <img src="https://www.tirthayatra.org/wp-content/uploads/2022/01/10-scaled.jpg" alt="Gopalaswamy Betta hilltop temple in clouds" />
+        </div>
+        <div class="content-card glass" data-aos="fade-left">
+          <span class="eyebrow">Destination ☁️</span>
+          <h2>Gopalaswamy Betta</h2>
+          <p>A magical hilltop where floating clouds kiss the earth, the sunrise paints the sky in gold, and divine beauty makes every quiet moment feel like a blessing made just for us.</p>
+          <ul class="feature-list">
+            <li>☁️ Clouds at eye level for dreamy hand-in-hand walks.</li>
+            <li>🌅 A sunrise that turns the hills into pure gold.</li>
+            <li>⛰️ The highest peak in Bandipur National Park's landscape.</li>
+            <li>🦌 Wildlife around the forest roads and safari trails.</li>
+            <li>❤️ A romantic escape wrapped in mist, devotion, and memories.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <span class="eyebrow">Photo Gallery Carousel 📸</span>
+          <h2>Moments Waiting For Us</h2>
+          <p>Eight frames of our dream day: safari wonders, misty hills, scenic roads, and our beautiful Kylaq.</p>
+        </div>
+        <div class="carousel glass" data-aos="zoom-in-up" aria-label="Romantic trip gallery">
+          <div class="carousel-track" id="carouselTrack">
+            <article class="slide"><img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=1600&q=85" alt="Bandipur Safari Elephant"><div class="caption">Bandipur Safari Elephant</div></article>
+            <article class="slide"><img src="https://images.unsplash.com/photo-1484406566174-9da000fda645?auto=format&fit=crop&w=1600&q=85" alt="Bandipur Safari Deer"><div class="caption">Bandipur Safari Deer</div></article>
+            <article class="slide"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=85" alt="Gopalaswamy Betta Mist"><div class="caption">Gopalaswamy Betta Mist</div></article>
+            <article class="slide"><img src="https://www.tirthayatra.org/wp-content/uploads/2022/01/10-scaled.jpg" alt="Gopalaswamy Betta Temple"><div class="caption">Gopalaswamy Betta Temple</div></article>
+            <article class="slide"><img src="https://images.unsplash.com/photo-1542385150-f38b5d38ccb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=85" alt="Bangalore to Gopalaswamy Betta Scenic Road"><div class="caption">Bangalore to Gopalaswamy Betta Scenic Road</div></article>
+            <article class="slide"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=85" alt="Bangalore to Gopalaswamy Betta Scenic Road"><div class="caption">Bangalore to Gopalaswamy Betta Scenic Road</div></article>
+            <article class="slide"><img src="https://imgd.aeplcdn.com/664x374/n/k6tblib_1902685.jpg?q=80" alt="Skoda Kylaq Deep Black"><div class="caption">Skoda Kylaq Deep Black</div></article>
+            <article class="slide"><img src="https://imgd.aeplcdn.com/664x374/n/k6tblib_1902685.jpg?q=80" alt="Skoda Kylaq Deep Black"><div class="caption">Skoda Kylaq Deep Black</div></article>
+          </div>
+          <button class="arrow prev" id="prevSlide" aria-label="Previous gallery image"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="arrow next" id="nextSlide" aria-label="Next gallery image"><i class="fa-solid fa-chevron-right"></i></button>
+          <div class="dots" id="carouselDots" aria-label="Gallery pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <span class="eyebrow">Hourly Date Timeline ❤️</span>
+          <h2>Our One-Day Love Story</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-card" data-aos="fade-up"><time>04:30 AM ❤️ Pick up my princess.</time><p>I can't wait to see your sleepy, beautiful smile as we start our journey.</p></div>
+          <div class="timeline-card" data-aos="fade-up"><time>05:00 AM ☕ Tea and sleepy conversations on the road.</time><p>The best journeys always begin with a warm cup and holding your hand.</p></div>
+          <div class="timeline-card" data-aos="fade-up"><time>07:30 AM ☁️ Reach Gopalaswamy Betta (Hello Clouds!).</time><p>We will literally be walking through the mist, hand in hand, feeling on top of the world.</p></div>
+          <div class="timeline-card" data-aos="fade-up"><time>08:00 AM 🙏 Temple visit and blessings.</time><p>Let's start our beautiful day by praying for a lifetime of togetherness.</p></div>
+          <div class="timeline-card" data-aos="fade-up"><time>09:00 AM 📸 Romantic photoshoot in the mist.</time><p>I want to capture every perfect angle of you against the magical clouds.</p></div>
+          <div class="timeline-card" data-aos="fade-up"><time>10:30 AM 🍳 Breakfast date.</time><p>Time to fuel up with some delicious food and share our favorite morning moments.</p></div>
+          <div class="timeline-card" data-aos="fade-up"><time>12:00 PM 🚘 Scenic Bandipur drive.</time><p>We'll roll the windows down, play our favorite songs, and enjoy the dense forest breeze.</p></div>
+          <div class="timeline-card" data-aos="fade-up"><time>02:00 PM 🦌 Bandipur Safari adventure.</time><p>Get ready to spot some majestic elephants and beautiful deer in their natural wild home.</p></div>
+          <div class="timeline-card" data-aos="fade-up"><time>04:00 PM 🍦 Ice cream date.</time><p>A sweet treat for the sweetest person in my life to cool down after the wild safari.</p></div>
+          <div class="timeline-card" data-aos="fade-up"><time>05:30 PM 🌅 Sunset drive back.</time><p>We will chase the golden hour as the sky turns into the exact color of your beautiful blush.</p></div>
+          <div class="timeline-card" data-aos="fade-up"><time>07:00 PM 🍽️ Dinner together.</time><p>A cozy, romantic meal to talk about all the amazing things we experienced today.</p></div>
+          <div class="timeline-card" data-aos="fade-up"><time>09:00 PM ❤️ Drop my princess home with unforgettable memories.</time><p>The day will end, but my love for you will have grown even deeper.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="safari">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <span class="eyebrow">Bandipur Safari Grid 🦁</span>
+          <h2>Wild Little Wonders</h2>
+        </div>
+        <div class="safari-grid">
+          <div class="safari-card glass" data-aos="flip-left"><i class="fa-solid fa-paw"></i><h3>Elephants</h3></div>
+          <div class="safari-card glass" data-aos="flip-left" data-aos-delay="100"><i class="fa-solid fa-horse"></i><h3>Deer</h3></div>
+          <div class="safari-card glass" data-aos="flip-left" data-aos-delay="200"><i class="fa-solid fa-tree"></i><h3>Forest Trails</h3></div>
+          <div class="safari-card glass" data-aos="flip-left" data-aos-delay="300"><i class="fa-solid fa-camera-retro"></i><h3>Safari Memories</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="map">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <span class="eyebrow">Google Maps 🗺️</span>
+          <h2>Route To The Clouds</h2>
+        </div>
+        <div class="map-wrap glass" data-aos="zoom-in">
+          <iframe title="Map to Himavad Gopalaswamy Betta" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Himavad%20Gopalaswamy%20Betta%2C%20Karnataka&output=embed"></iframe>
+        </div>
+        <div class="map-actions"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Himavad%20Gopalaswamy%20Betta%2C%20Karnataka" target="_blank" rel="noopener noreferrer">Open Navigation</a></div>
+      </div>
+    </section>
+
+    <section id="letter">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <span class="eyebrow">Love Letter 💌</span>
+          <h2>From My Heart</h2>
+        </div>
+        <div class="letter-card" data-aos="fade-up">
+          <p>My Dearest Pooja,</p>
+          <p>Among all beautiful places in Karnataka, none are as beautiful as the smile you bring to my life. I want to spend one unforgettable day with you—driving through misty roads, watching clouds embrace the hills, sharing ice creams, laughing endlessly, and creating memories we will cherish forever.</p>
+          <p>This trip is not just about visiting Gopalaswamy Betta. It's about spending a beautiful day with the woman I want beside me for every sunrise, every adventure, and every chapter of life.</p>
+          <p>Will you join me on this magical journey?</p>
+          <p class="signature">Forever Yours,<br>Channu ❤️</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="proposal">
+      <div class="container proposal">
+        <div class="content-card glass" data-aos="zoom-in-up">
+          <span class="eyebrow">The Most Important Question</span>
+          <h2>Will You Join Me On This Adventure? ❤️</h2>
+          <div class="proposal-actions" id="proposalActions">
+            <button class="btn" id="yesBtn">YES ❤️ Let's Create Memories</button>
+            <button class="btn" id="noBtn" type="button">NO 🙈 Catch Me If You Can</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="yesModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal glass">
+      <h2 id="modalTitle">YAYYYYY ❤️</h2>
+      <p>Best Date Ever Confirmed! Clouds are ready. Bandipur is waiting. The Kylaq is fueled. And my heart is already smiling. See you on our dream date, my love ❤️</p>
+      <button class="btn" id="closeModal">Close With A Kiss 😘</button>
+    </div>
+  </div>
+
+  <footer>Made with clouds, safari dreams, and endless love for Pooja ❤️</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script>
+    const enterBtn = document.getElementById('enterBtn');
+    const heroOverlay = document.getElementById('heroOverlay');
+    const audio = document.getElementById('loveSong');
+    const musicToggle = document.getElementById('musicToggle');
+    const toast = document.getElementById('toast');
+    const fallingLayer = document.getElementById('fallingLayer');
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const yesModal = document.getElementById('yesModal');
+    const closeModal = document.getElementById('closeModal');
+    let entered = false;
+    let noAttempts = 0;
+    let toastTimer;
+
+    AOS.init({ duration: 900, once: false, offset: 90, easing: 'ease-out-cubic' });
+
+    enterBtn.addEventListener('click', async () => {
+      entered = true;
+      document.body.classList.add('entered');
+      heroOverlay.classList.add('hidden');
+      try {
+        audio.volume = 0.48;
+        await audio.play();
+        musicToggle.textContent = '🎵 Music On';
+        musicToggle.setAttribute('aria-pressed', 'true');
+      } catch (error) {
+        musicToggle.textContent = '🎵 Music Off';
+      }
+      setTimeout(() => AOS.refresh(), 500);
+    });
+
+    musicToggle.addEventListener('click', async () => {
+      if (!entered) return showToast('Click Enter first, my love ❤️');
+      if (audio.paused) {
+        try {
+          await audio.play();
+          musicToggle.textContent = '🎵 Music On';
+          musicToggle.setAttribute('aria-pressed', 'true');
+        } catch (error) {
+          showToast('Music needs one more tap ❤️');
+        }
+      } else {
+        audio.pause();
+        musicToggle.textContent = '🎵 Music Off';
+        musicToggle.setAttribute('aria-pressed', 'false');
+      }
+    });
+
+    function updateCountdown() {
+      const target = new Date('2026-06-15T04:30:00+05:30').getTime();
+      const diff = Math.max(0, target - Date.now());
+      const day = 24 * 60 * 60 * 1000;
+      const hour = 60 * 60 * 1000;
+      const minute = 60 * 1000;
+      document.getElementById('days').textContent = String(Math.floor(diff / day)).padStart(2, '0');
+      document.getElementById('hours').textContent = String(Math.floor((diff % day) / hour)).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(Math.floor((diff % hour) / minute)).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(Math.floor((diff % minute) / 1000)).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    const track = document.getElementById('carouselTrack');
+    const slides = Array.from(track.children);
+    const dotsWrap = document.getElementById('carouselDots');
+    const prevSlide = document.getElementById('prevSlide');
+    const nextSlide = document.getElementById('nextSlide');
+    let currentSlide = 0;
+    let carouselTimer;
+
+    slides.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.className = 'dot';
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `Show gallery image ${index + 1}`);
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function goToSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      dots.forEach((dot, dotIndex) => dot.classList.toggle('active', dotIndex === currentSlide));
+      restartCarousel();
+    }
+    function next() { goToSlide(currentSlide + 1); }
+    function restartCarousel() {
+      clearInterval(carouselTimer);
+      carouselTimer = setInterval(next, 4200);
+    }
+    prevSlide.addEventListener('click', () => goToSlide(currentSlide - 1));
+    nextSlide.addEventListener('click', next);
+    goToSlide(0);
+
+    function moveNoButton(event) {
+      event.preventDefault();
+      noAttempts += 1;
+      noBtn.classList.add('runaway');
+      const safePadding = 18;
+      const maxX = Math.max(safePadding, window.innerWidth - noBtn.offsetWidth - safePadding);
+      const maxY = Math.max(safePadding, window.innerHeight - noBtn.offsetHeight - safePadding);
+      const x = Math.floor(Math.random() * maxX);
+      const y = Math.floor(Math.random() * maxY);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+      noBtn.style.transform = `rotate(${Math.random() * 18 - 9}deg) scale(${0.94 + Math.random() * 0.12})`;
+      if (noAttempts >= 10) showToast('Looks like destiny already chose YES ❤️');
+    }
+    ['mouseenter', 'mouseover', 'touchstart', 'pointerdown', 'focus', 'click'].forEach((eventName) => {
+      noBtn.addEventListener(eventName, moveNoButton, { passive: false });
+    });
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
+    }
+
+    function launchFallingLove() {
+      const icons = ['❤️', '🌹', '💖', '🌸', '💘'];
+      for (let i = 0; i < 90; i++) {
+        const item = document.createElement('span');
+        item.className = 'falling';
+        item.textContent = icons[Math.floor(Math.random() * icons.length)];
+        item.style.left = `${Math.random() * 100}vw`;
+        item.style.animationDuration = `${3 + Math.random() * 4}s`;
+        item.style.animationDelay = `${Math.random() * 1.1}s`;
+        item.style.fontSize = `${18 + Math.random() * 24}px`;
+        fallingLayer.appendChild(item);
+        setTimeout(() => item.remove(), 8200);
+      }
+    }
+
+    function confettiExplosion() {
+      const duration = 3600;
+      const end = Date.now() + duration;
+      (function frame() {
+        confetti({ particleCount: 6, angle: 60, spread: 70, origin: { x: 0 }, colors: ['#ff2f86', '#ff3158', '#ffd166', '#ffffff'] });
+        confetti({ particleCount: 6, angle: 120, spread: 70, origin: { x: 1 }, colors: ['#ff2f86', '#ff3158', '#ffd166', '#ffffff'] });
+        confetti({ particleCount: 2, spread: 100, startVelocity: 34, origin: { x: Math.random(), y: Math.random() - 0.2 }, colors: ['#ff6ea9', '#ffd166', '#fffafc'] });
+        if (Date.now() < end) requestAnimationFrame(frame);
+      }());
+    }
+
+    yesBtn.addEventListener('click', () => {
+      confettiExplosion();
+      launchFallingLove();
+      document.body.classList.add('modal-open');
+      yesModal.classList.add('show');
+      closeModal.focus();
+    });
+    closeModal.addEventListener('click', () => {
+      yesModal.classList.remove('show');
+      document.body.classList.remove('modal-open');
+    });
+    yesModal.addEventListener('click', (event) => {
+      if (event.target === yesModal) closeModal.click();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && yesModal.classList.contains('show')) closeModal.click();
+    });
+  </script>
+</body>
+</html>
