@@ -1,777 +1,1315 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A luxury romantic one-day invitation to Gopalaswamy Betta and Bandipur Safari for Pooja." />
-  <title>A Day Above The Clouds With My Future Wife ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Special Day for You, Pooja 💕</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,500&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+  :root {
+    --rose: #c2185b;
+    --rose-light: #f48fb1;
+    --rose-pale: #fce4ec;
+    --gold: #b8860b;
+    --gold-light: #f0d060;
+    --cream: #fff8f0;
+    --deep: #2d1b2e;
+    --misty: rgba(255,255,255,0.85);
+  }
 
-  <style>
-    :root {
-      --pink: #ff6ea9;
-      --hot-pink: #ff2f86;
-      --red: #ff3158;
-      --gold: #ffd166;
-      --sunset: #ff9f1c;
-      --white: #fffafc;
-      --muted: rgba(255, 255, 255, 0.78);
-      --dark: #07030b;
-      --glass: rgba(255, 255, 255, 0.13);
-      --glass-border: rgba(255, 255, 255, 0.24);
-      --shadow: 0 30px 90px rgba(0, 0, 0, 0.48);
-      --glow: 0 0 28px rgba(255, 110, 169, 0.58), 0 0 80px rgba(255, 209, 102, 0.18);
-      --radius-xl: 34px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
-      --max: 1180px;
-    }
+  html { scroll-behavior: smooth; }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      min-height: 100vh;
-      overflow: hidden;
-      color: var(--white);
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--dark);
-    }
-    body.entered { overflow-x: hidden; overflow-y: auto; }
-    body.modal-open { overflow: hidden; }
-    body.modal-open main, body.modal-open .music-toggle { filter: blur(8px); pointer-events: none; }
+  body {
+    font-family: 'Cormorant Garamond', serif;
+    background: linear-gradient(160deg, #b0c4de 0%, #d4e8f7 20%, #e8f4fd 40%, #f0e8f0 60%, #f7e0ea 80%, #fce4ec 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--deep);
+  }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -3;
-      background: linear-gradient(135deg, rgba(7, 3, 11, 0.9), rgba(48, 4, 34, 0.62)),
-        url("https://images.unsplash.com/photo-1542385150-f38b5d38ccb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=85") center/cover no-repeat;
-      transform: scale(1.03);
-    }
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(circle at 18% 18%, rgba(255, 110, 169, 0.26), transparent 28%),
-        radial-gradient(circle at 78% 12%, rgba(255, 209, 102, 0.2), transparent 26%),
-        radial-gradient(circle at 50% 82%, rgba(255, 49, 88, 0.18), transparent 30%),
-        rgba(0, 0, 0, 0.44);
-      pointer-events: none;
-    }
+  /* ── CLOUD BACKGROUND ── */
+  .cloud-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
 
-    img { max-width: 100%; display: block; }
-    a { color: inherit; }
-    button { font: inherit; }
+  .cloud {
+    position: absolute;
+    background: rgba(255,255,255,0.75);
+    border-radius: 50%;
+    filter: blur(2px);
+    animation: floatCloud linear infinite;
+  }
+  .cloud::before, .cloud::after {
+    content: '';
+    position: absolute;
+    background: inherit;
+    border-radius: 50%;
+  }
+  .c1  { width:220px; height:80px;  top:5%;  left:-10%; animation-duration:55s; opacity:.7; }
+  .c1::before  { width:120px; height:100px; top:-50px; left:30px; }
+  .c1::after   { width:90px;  height:70px;  top:-30px; left:110px; }
 
-    .hero-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 50;
-      display: grid;
-      place-items: center;
-      min-height: 100dvh;
-      isolation: isolate;
-      overflow: hidden;
-      background: #000;
-      transition: opacity 1.15s ease, visibility 1.15s ease, transform 1.15s ease;
-    }
-    .hero-overlay.hidden { opacity: 0; visibility: hidden; transform: scale(1.04); pointer-events: none; }
-    .hero-slide {
-      position: absolute;
-      inset: 0;
-      z-index: -4;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      animation: heroFade 18s infinite;
-      filter: saturate(1.12) contrast(1.08);
-    }
-    .hero-slide:nth-child(1) { background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=85"); animation-delay: 0s; }
-    .hero-slide:nth-child(2) { background-image: url("https://imgd.aeplcdn.com/664x374/n/k6tblib_1902685.jpg?q=80"); animation-delay: 6s; }
-    .hero-slide:nth-child(3) { background-image: url("https://www.tirthayatra.org/wp-content/uploads/2022/01/10-scaled.jpg"); animation-delay: 12s; }
-    .hero-overlay::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -3;
-      background: linear-gradient(180deg, rgba(0,0,0,.72), rgba(24,0,20,.58), rgba(0,0,0,.82));
-    }
-    .hero-overlay::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      background-image: radial-gradient(rgba(255,255,255,.34) 1px, transparent 1px);
-      background-size: 38px 38px;
-      opacity: .18;
-    }
-    @keyframes heroFade { 0%, 38% { opacity: 1; transform: scale(1); } 48%, 100% { opacity: 0; transform: scale(1.08); } }
+  .c2  { width:300px; height:100px; top:12%; left:20%; animation-duration:70s; animation-delay:-20s; opacity:.55; }
+  .c2::before  { width:160px; height:120px; top:-60px; left:40px; }
+  .c2::after   { width:110px; height:80px;  top:-40px; left:160px; }
 
-    .cloud {
-      position: absolute;
-      width: var(--w);
-      height: calc(var(--w) * .33);
-      top: var(--top);
-      left: -35vw;
-      z-index: -1;
-      opacity: var(--o);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.74);
-      filter: blur(7px);
-      animation: cloudDrift var(--dur) linear infinite;
-      animation-delay: var(--delay);
-    }
-    .cloud::before, .cloud::after { content: ""; position: absolute; border-radius: 50%; background: inherit; }
-    .cloud::before { width: 42%; height: 125%; left: 14%; bottom: 22%; }
-    .cloud::after { width: 52%; height: 155%; right: 12%; bottom: 12%; }
-    @keyframes cloudDrift { to { transform: translateX(150vw) translateY(var(--y)); } }
+  .c3  { width:180px; height:70px;  top:22%; left:65%; animation-duration:48s; animation-delay:-10s; opacity:.65; }
+  .c3::before  { width:100px; height:90px;  top:-45px; left:20px; }
+  .c3::after   { width:80px;  height:60px;  top:-30px; left:90px; }
 
-    .hero-card {
-      width: min(92vw, 900px);
-      padding: clamp(32px, 6vw, 70px);
-      text-align: center;
-      border: 1px solid rgba(255,255,255,.24);
-      border-radius: 42px;
-      background: linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.05));
-      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.2);
-      backdrop-filter: blur(18px);
-      animation: floatHero 5s ease-in-out infinite;
-    }
-    @keyframes floatHero { 50% { transform: translateY(-12px); } }
-    .eyebrow {
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      margin-bottom: 18px;
-      padding: 9px 16px;
-      border: 1px solid rgba(255, 209, 102, .42);
-      border-radius: 999px;
-      color: var(--gold);
-      background: rgba(255, 209, 102, .09);
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      font-size: .76rem;
-      font-weight: 800;
-    }
-    h1, h2, h3 { font-family: "Cormorant Garamond", serif; line-height: 1.04; }
-    .hero-card h1 {
-      font-size: clamp(3.15rem, 9vw, 7.6rem);
-      font-family: "Great Vibes", cursive;
-      font-weight: 400;
-      text-shadow: 0 0 32px rgba(255, 110, 169, .72);
-    }
-    .hero-card .subtitle { margin-top: 14px; color: rgba(255,255,255,.9); font-size: clamp(1rem, 2.7vw, 1.45rem); font-weight: 600; }
-    .typing {
-      display: inline-block;
-      margin: 28px auto 34px;
-      max-width: 100%;
-      overflow: hidden;
-      border-right: 3px solid var(--gold);
-      color: var(--gold);
-      white-space: nowrap;
-      font-size: clamp(1.05rem, 3vw, 1.75rem);
-      font-weight: 800;
-      animation: typing 4s steps(35, end) infinite alternate, blink .8s step-end infinite;
-    }
-    @keyframes typing { from { width: 0; } to { width: 35ch; } }
-    @keyframes blink { 50% { border-color: transparent; } }
+  .c4  { width:260px; height:90px;  top:35%; left:-5%; animation-duration:62s; animation-delay:-35s; opacity:.5; }
+  .c4::before  { width:140px; height:110px; top:-55px; left:35px; }
+  .c4::after   { width:100px; height:75px;  top:-35px; left:140px; }
 
-    .btn {
-      position: relative;
-      z-index: 1;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      border: 0;
-      border-radius: 999px;
-      padding: 15px 26px;
-      cursor: pointer;
-      color: white;
-      font-weight: 900;
-      text-decoration: none;
-      background: linear-gradient(135deg, var(--hot-pink), var(--red), var(--sunset));
-      box-shadow: 0 18px 42px rgba(255, 47, 134, .35), inset 0 1px 0 rgba(255,255,255,.35);
-      transition: transform .28s ease, box-shadow .28s ease, filter .28s ease;
-      overflow: hidden;
-    }
-    .btn::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      z-index: -1;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
-      transform: translateX(-130%) skewX(-18deg);
-      transition: transform .8s ease;
-    }
-    .btn:hover { transform: translateY(-4px) scale(1.03); box-shadow: var(--glow); filter: brightness(1.08); }
-    .btn:hover::before { transform: translateX(130%) skewX(-18deg); }
-    .btn.secondary { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.26); }
+  .c5  { width:200px; height:75px;  top:50%; left:55%; animation-duration:52s; animation-delay:-15s; opacity:.6; }
+  .c5::before  { width:110px; height:95px;  top:-48px; left:25px; }
+  .c5::after   { width:85px;  height:65px;  top:-32px; left:100px; }
 
-    main { opacity: 0; transition: opacity 1s ease .35s; }
-    body.entered main { opacity: 1; }
-    .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
-    section { padding: clamp(70px, 10vw, 120px) 0; }
-    .section-title { text-align: center; margin-bottom: 34px; }
-    .section-title h2 { font-size: clamp(2.35rem, 6vw, 5rem); text-shadow: 0 0 20px rgba(255,255,255,.22); }
-    .section-title p { width: min(760px, 100%); margin: 14px auto 0; color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
-    .glass {
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-xl);
-      background: linear-gradient(145deg, rgba(255,255,255,.15), rgba(255,255,255,.07));
-      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.18);
-      backdrop-filter: blur(20px);
+  .c6  { width:240px; height:85px;  top:68%; left:10%; animation-duration:68s; animation-delay:-42s; opacity:.5; }
+  .c6::before  { width:130px; height:105px; top:-52px; left:38px; }
+  .c6::after   { width:95px;  height:72px;  top:-34px; left:130px; }
+
+  .c7  { width:170px; height:65px;  top:80%; left:75%; animation-duration:45s; animation-delay:-5s; opacity:.55; }
+  .c7::before  { width:95px;  height:85px;  top:-42px; left:18px; }
+  .c7::after   { width:75px;  height:58px;  top:-28px; left:85px; }
+
+  .c8  { width:310px; height:110px; top:90%; left:30%; animation-duration:75s; animation-delay:-28s; opacity:.45; }
+  .c8::before  { width:170px; height:130px; top:-65px; left:45px; }
+  .c8::after   { width:120px; height:88px;  top:-44px; left:175px; }
+
+  @keyframes floatCloud {
+    from { transform: translateX(0); }
+    to   { transform: translateX(110vw); }
+  }
+
+  /* ── FLOATING PETALS ── */
+  .petal-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .petal {
+    position: absolute;
+    top: -40px;
+    font-size: 18px;
+    animation: petalFall linear infinite;
+    opacity: 0.7;
+  }
+  @keyframes petalFall {
+    0%   { transform: translateY(0) rotate(0deg) translateX(0); opacity: .8; }
+    50%  { transform: translateY(50vh) rotate(180deg) translateX(30px); opacity: .6; }
+    100% { transform: translateY(110vh) rotate(360deg) translateX(-20px); opacity: 0; }
+  }
+
+  /* ── MAIN WRAPPER ── */
+  .wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+  }
+
+  /* ── MUSIC PLAYER ── */
+  .music-bar {
+    position: fixed;
+    top: 18px; right: 18px;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(194,24,91,0.3);
+    border-radius: 50px;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--rose);
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(194,24,91,0.15);
+    transition: all .3s;
+  }
+  .music-bar:hover { box-shadow: 0 6px 28px rgba(194,24,91,0.25); transform: translateY(-1px); }
+  .music-icon { font-size: 20px; animation: musicPulse 2s ease-in-out infinite; }
+  @keyframes musicPulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.2);} }
+  .music-note { font-size: 12px; animation: noteFly 3s ease-in-out infinite; }
+  @keyframes noteFly { 0%,100%{transform:translateY(0) rotate(-10deg);opacity:.5;} 50%{transform:translateY(-6px) rotate(10deg);opacity:1;} }
+
+  /* ── HERO ── */
+  .hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+    position: relative;
+  }
+  .hero-date {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(15px, 4vw, 22px);
+    color: var(--rose);
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeUp .8s .2s forwards;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 9vw, 78px);
+    color: var(--deep);
+    line-height: 1.1;
+    opacity: 0;
+    animation: fadeUp .9s .4s forwards;
+    font-style: italic;
+  }
+  .hero-title span { color: var(--rose); }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 3vw, 24px);
+    color: #6d4c5e;
+    margin-top: 12px;
+    font-style: italic;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp .9s .6s forwards;
+  }
+  .heart-divider {
+    margin: 22px auto;
+    font-size: 26px;
+    letter-spacing: 12px;
+    opacity: 0;
+    animation: fadeUp .8s .8s forwards;
+  }
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(24px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  /* ── LOVE LETTER ── */
+  .letter-wrap {
+    position: relative;
+    margin: 20px 0 40px;
+    opacity: 0;
+    animation: fadeUp 1s 1s forwards;
+  }
+  .envelope-flap {
+    width: 100%;
+    height: 44px;
+    background: linear-gradient(135deg, #f8d7e3, #fce4ec);
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    border-radius: 0 0 6px 6px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(194,24,91,0.15);
+  }
+  .letter-card {
+    background: linear-gradient(145deg, rgba(255,253,248,0.97), rgba(255,240,250,0.97));
+    border: 1px solid rgba(194,24,91,0.2);
+    border-radius: 0 0 18px 18px;
+    padding: 36px 44px 40px;
+    position: relative;
+    box-shadow: 0 12px 40px rgba(194,24,91,0.1), inset 0 0 60px rgba(255,200,220,0.06);
+    overflow: hidden;
+  }
+  .letter-card::before {
+    content: '♡';
+    position: absolute;
+    font-size: 220px;
+    color: rgba(194,24,91,0.04);
+    right: -30px; top: -30px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .letter-seal {
+    position: absolute;
+    top: -22px; left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #c2185b, #e91e8c);
+    color: white;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 4px 16px rgba(194,24,91,0.4);
+    z-index: 3;
+    animation: sealPulse 2.5s ease-in-out infinite;
+  }
+  @keyframes sealPulse { 0%,100%{transform:translateX(-50%) scale(1);} 50%{transform:translateX(-50%) scale(1.08);} }
+
+  .letter-greeting {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(22px, 4vw, 30px);
+    color: var(--rose);
+    margin-bottom: 20px;
+    margin-top: 14px;
+  }
+  .letter-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2.5vw, 20px);
+    line-height: 1.95;
+    color: #3d2035;
+    font-weight: 300;
+  }
+  .letter-body p { margin-bottom: 16px; }
+  .letter-body em { color: var(--rose); font-style: italic; }
+  .letter-sign {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(20px, 3.5vw, 28px);
+    color: var(--rose);
+    margin-top: 24px;
+    text-align: right;
+  }
+
+  /* ── SECTION TITLE ── */
+  .section-title {
+    text-align: center;
+    margin: 50px 0 30px;
+  }
+  .section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 5vw, 40px);
+    color: var(--deep);
+    font-style: italic;
+  }
+  .section-title h2 span { color: var(--rose); }
+  .title-line {
+    width: 80px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--rose), transparent);
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
+
+  /* ── ROAD MAP ── */
+  .roadmap {
+    position: relative;
+    padding: 20px 0;
+    margin-bottom: 20px;
+  }
+
+  .road-svg-container {
+    width: 100%;
+    overflow: visible;
+  }
+
+  /* ── DESTINATION CARDS ── */
+  .dest-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 30px 0;
+  }
+  @media(max-width:600px) { .dest-cards { grid-template-columns: 1fr; } }
+
+  .dest-card {
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(194,24,91,0.2);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(194,24,91,0.1);
+    transition: transform .3s, box-shadow .3s;
+    opacity: 0;
+    animation: fadeUp .9s forwards;
+  }
+  .dest-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(194,24,91,0.18); }
+  .dest-card:nth-child(1) { animation-delay: 0.2s; }
+  .dest-card:nth-child(2) { animation-delay: 0.4s; }
+
+  .dest-img-wrap {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    background: #e8d5e0;
+  }
+  .dest-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .5s;
+  }
+  .dest-card:hover .dest-img-wrap img { transform: scale(1.06); }
+  .dest-img-wrap .img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(45,27,46,0.6) 0%, transparent 60%);
+  }
+  .dest-img-label {
+    position: absolute;
+    bottom: 12px; left: 16px;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  /* image fallback scenic SVG */
+  .dest-scene {
+    width: 100%; height: 220px;
+  }
+
+  .dest-info {
+    padding: 18px 20px 20px;
+  }
+  .dest-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--deep);
+    margin-bottom: 6px;
+    font-style: italic;
+  }
+  .dest-desc {
+    font-size: 14px;
+    color: #6d4c5e;
+    line-height: 1.7;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+  }
+  .dest-tag {
+    display: inline-block;
+    background: var(--rose-pale);
+    color: var(--rose);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    margin-top: 10px;
+    letter-spacing: .5px;
+    border: 1px solid rgba(194,24,91,0.2);
+  }
+
+  /* ── CHARIOT (CAR) SECTION ── */
+  .chariot-section {
+    background: rgba(255,255,255,0.82);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(45,27,46,0.12);
+    border-radius: 20px;
+    padding: 32px 36px;
+    margin: 30px 0;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.07);
+    opacity: 0;
+    animation: fadeUp .9s .3s forwards;
+  }
+  .chariot-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 28px;
+    color: var(--rose);
+    margin-bottom: 18px;
+  }
+  .chariot-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    color: #6d4c5e;
+    margin-top: 14px;
+    font-style: italic;
+  }
+
+  /* ── ITINERARY TIMELINE ── */
+  .timeline {
+    position: relative;
+    padding: 10px 0;
+    margin: 30px 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--rose-light), var(--rose), var(--rose-light), transparent);
+    transform: translateX(-50%);
+  }
+  @media(max-width:600px) {
+    .timeline::before { left: 28px; }
+  }
+
+  .tl-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: calc(50% + 30px);
+    margin-bottom: 36px;
+    position: relative;
+    opacity: 0;
+    animation: fadeUp .8s forwards;
+  }
+  .tl-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: calc(50% + 30px);
+  }
+  @media(max-width:600px) {
+    .tl-item, .tl-item:nth-child(even) {
+      justify-content: flex-start;
+      padding-right: 0;
+      padding-left: 60px;
     }
-    .countdown-card { padding: clamp(24px, 5vw, 46px); text-align: center; }
-    .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 26px; }
-    .time-box {
-      padding: 24px 10px;
-      border-radius: 24px;
-      background: rgba(0,0,0,.36);
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: inset 0 0 28px rgba(255,110,169,.08);
-    }
-    .time-box span { display: block; color: var(--gold); font-size: clamp(2rem, 6vw, 4.7rem); font-weight: 900; text-shadow: 0 0 22px rgba(255, 209, 102, .3); animation: pulseText 1s ease infinite alternate; }
-    .time-box small { color: white; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; }
-    @keyframes pulseText { to { transform: scale(1.035); } }
+  }
 
-    .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 56px); align-items: center; }
-    .content-card { padding: clamp(24px, 4vw, 42px); }
-    .content-card h2 { font-size: clamp(2.1rem, 5vw, 4rem); color: #fff; }
-    .content-card p, .content-card li { color: rgba(255,255,255,.9); line-height: 1.82; font-size: 1.06rem; }
-    .feature-list { margin-top: 18px; list-style: none; display: grid; gap: 12px; }
-    .feature-list li { padding: 13px 16px; border-radius: 16px; background: rgba(0,0,0,.27); border: 1px solid rgba(255,255,255,.14); }
-    .image-frame { overflow: hidden; border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,.26); box-shadow: var(--shadow); min-height: 360px; }
-    .image-frame img { width: 100%; height: 100%; min-height: 360px; object-fit: cover; transition: transform 1s ease; }
-    .image-frame:hover img { transform: scale(1.08); }
+  .tl-dot {
+    position: absolute;
+    left: 50%;
+    top: 16px;
+    transform: translateX(-50%);
+    width: 22px; height: 22px;
+    background: white;
+    border: 3px solid var(--rose);
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 0 4px rgba(194,24,91,0.12);
+  }
+  @media(max-width:600px) { .tl-dot { left: 28px; } }
 
-    .carousel { position: relative; overflow: hidden; border-radius: var(--radius-xl); }
-    .carousel-track { display: flex; transition: transform .8s cubic-bezier(.22,1,.36,1); }
-    .slide { min-width: 100%; position: relative; height: clamp(340px, 55vw, 620px); overflow: hidden; }
-    .slide img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s ease; }
-    .slide:hover img { transform: scale(1.08); }
-    .slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 42%, rgba(0,0,0,.78)); }
-    .caption { position: absolute; left: clamp(18px, 4vw, 44px); bottom: clamp(18px, 4vw, 42px); z-index: 2; font-size: clamp(1.25rem, 4vw, 2.5rem); font-family: "Cormorant Garamond", serif; font-weight: 800; text-shadow: 0 6px 20px black; }
-    .arrow {
-      position: absolute;
-      top: 50%;
-      z-index: 3;
-      width: 48px;
-      height: 48px;
-      border: 1px solid rgba(255,255,255,.28);
-      border-radius: 50%;
-      color: white;
-      background: rgba(0,0,0,.42);
-      cursor: pointer;
-      transform: translateY(-50%);
-      backdrop-filter: blur(10px);
-      transition: .25s ease;
-    }
-    .arrow:hover { background: var(--hot-pink); transform: translateY(-50%) scale(1.08); }
-    .prev { left: 18px; } .next { right: 18px; }
-    .dots { position: absolute; left: 50%; bottom: 18px; z-index: 4; display: flex; gap: 9px; transform: translateX(-50%); }
-    .dot { width: 10px; height: 10px; border: 0; border-radius: 50%; background: rgba(255,255,255,.45); cursor: pointer; transition: .25s; }
-    .dot.active { width: 30px; border-radius: 999px; background: var(--gold); }
+  .tl-card {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(194,24,91,0.18);
+    border-radius: 14px;
+    padding: 14px 18px;
+    max-width: 280px;
+    box-shadow: 0 4px 18px rgba(194,24,91,0.08);
+  }
+  .tl-time {
+    font-family: 'Dancing Script', cursive;
+    color: var(--rose);
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .tl-event {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--deep);
+    margin-bottom: 4px;
+  }
+  .tl-note {
+    font-size: 13px;
+    color: #8d6070;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+  }
 
-    .timeline { position: relative; display: grid; gap: 22px; width: min(920px, 100%); margin: 0 auto; }
-    .timeline::before { content: ""; position: absolute; left: 18px; top: 12px; bottom: 12px; width: 2px; background: linear-gradient(var(--pink), var(--gold), var(--red)); box-shadow: var(--glow); }
-    .timeline-card {
-      position: relative;
-      margin-left: 52px;
-      padding: 22px 24px;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,.2);
-      background: linear-gradient(135deg, rgba(3,3,10,.82), rgba(42,3,28,.78));
-      box-shadow: 0 20px 55px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.12);
-    }
-    .timeline-card::before { content: ""; position: absolute; left: -42px; top: 26px; width: 16px; height: 16px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 8px rgba(255,209,102,.12), var(--glow); }
-    .timeline-card time { display: block; margin-bottom: 8px; color: #fff; font-weight: 900; font-size: 1.12rem; text-shadow: 0 0 14px rgba(255,255,255,.54); }
-    .timeline-card p { color: #fff; line-height: 1.75; text-shadow: 0 0 12px rgba(255,255,255,.28); }
+  /* ── RSVP ── */
+  .rsvp-section {
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+  }
+  .rsvp-question {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 5vw, 36px);
+    color: var(--deep);
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  .rsvp-question span { color: var(--rose); }
+  .rsvp-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #8d6070;
+    font-style: italic;
+    margin-bottom: 36px;
+  }
 
-    .safari-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-    .safari-card { padding: 34px 18px; text-align: center; border-radius: 26px; transition: .3s ease; }
-    .safari-card:hover { transform: translateY(-10px); box-shadow: var(--glow); }
-    .safari-card i { color: var(--gold); font-size: 2.7rem; margin-bottom: 18px; text-shadow: 0 0 18px rgba(255,209,102,.45); }
-    .safari-card h3 { font-size: 1.75rem; }
+  .btn-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    min-height: 80px;
+  }
 
-    .map-wrap { overflow: hidden; padding: 10px; }
-    iframe { width: 100%; min-height: 430px; border: 0; border-radius: 26px; filter: saturate(1.1) contrast(1.05); }
-    .map-actions { display: flex; justify-content: center; margin-top: 22px; }
+  .btn-yes {
+    font-family: 'Dancing Script', cursive;
+    font-size: 26px;
+    color: white;
+    background: linear-gradient(135deg, #c2185b, #e91e8c);
+    border: none;
+    border-radius: 50px;
+    padding: 14px 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(194,24,91,0.4);
+    transition: transform .2s, box-shadow .2s;
+    position: relative;
+    z-index: 5;
+  }
+  .btn-yes:hover { transform: scale(1.06); box-shadow: 0 12px 40px rgba(194,24,91,0.55); }
+  .btn-yes:active { transform: scale(.96); }
 
-    .letter-card {
-      width: min(880px, 100%);
-      margin: 0 auto;
-      padding: clamp(28px, 6vw, 64px);
-      border-radius: 18px;
-      color: #4f2431;
-      background:
-        linear-gradient(90deg, rgba(143,82,42,.08) 1px, transparent 1px),
-        linear-gradient(#fff8e9, #fff1d2);
-      background-size: 28px 28px, auto;
-      box-shadow: 0 30px 90px rgba(0,0,0,.42);
-      font-family: "Cormorant Garamond", serif;
-      position: relative;
-    }
-    .letter-card::before { content: "💌"; position: absolute; top: -28px; right: 28px; font-size: 3.2rem; filter: drop-shadow(0 8px 12px rgba(0,0,0,.28)); }
-    .letter-card p { font-size: clamp(1.25rem, 3vw, 1.75rem); line-height: 1.66; }
-    .signature { margin-top: 24px; font-family: "Great Vibes", cursive; font-size: clamp(2.2rem, 6vw, 4rem) !important; color: #d91552; }
+  .btn-no {
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    color: #8d6070;
+    background: rgba(255,255,255,0.8);
+    border: 1px solid rgba(194,24,91,0.25);
+    border-radius: 50px;
+    padding: 12px 36px;
+    cursor: pointer;
+    transition: all .25s;
+    position: absolute;
+    z-index: 4;
+    white-space: nowrap;
+    left: 50%;
+    top: 50%;
+    transform: translate(110px, -50%);
+  }
 
-    .proposal { text-align: center; }
-    .proposal-actions { position: relative; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; min-height: 92px; margin-top: 28px; }
-    #noBtn { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.32); user-select: none; }
-    #noBtn.runaway { position: fixed; z-index: 21; transition: left .22s ease, top .22s ease, transform .22s ease; }
+  /* ── SUCCESS / YES state ── */
+  .yes-message {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    animation: popIn .5s ease;
+  }
+  .yes-message.show { display: block; }
+  .yes-emoji { font-size: 60px; animation: bounce 1s infinite; }
+  .yes-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 5vw, 36px);
+    color: var(--rose);
+    font-style: italic;
+    margin-top: 16px;
+  }
+  .yes-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: #8d6070;
+    margin-top: 8px;
+    font-style: italic;
+  }
+  @keyframes popIn {
+    0% { opacity:0; transform:scale(.7); }
+    80% { transform:scale(1.05); }
+    100% { opacity:1; transform:scale(1); }
+  }
+  @keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
 
-    .music-toggle {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 30;
-      padding: 12px 16px;
-      border: 1px solid rgba(255,255,255,.24);
-      border-radius: 999px;
-      color: white;
-      background: rgba(0,0,0,.54);
-      backdrop-filter: blur(15px);
-      box-shadow: 0 14px 36px rgba(0,0,0,.34);
-      cursor: pointer;
-      font-weight: 800;
-    }
-    .toast {
-      position: fixed;
-      left: 50%;
-      bottom: 90px;
-      z-index: 60;
-      padding: 14px 20px;
-      border-radius: 999px;
-      color: white;
-      background: linear-gradient(135deg, var(--hot-pink), var(--sunset));
-      box-shadow: var(--glow);
-      transform: translate(-50%, 28px);
-      opacity: 0;
-      pointer-events: none;
-      transition: .35s ease;
-      font-weight: 900;
-      text-align: center;
-    }
-    .toast.show { transform: translate(-50%, 0); opacity: 1; }
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 30px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    color: var(--rose);
+    opacity: .8;
+  }
 
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 55;
-      display: grid;
-      place-items: center;
-      padding: 18px;
-      background: rgba(0,0,0,.55);
-      opacity: 0;
-      visibility: hidden;
-      transition: .35s ease;
-    }
-    .modal-backdrop.show { opacity: 1; visibility: visible; }
-    .modal {
-      width: min(560px, 100%);
-      padding: clamp(28px, 5vw, 48px);
-      text-align: center;
-      transform: translateY(28px) scale(.96);
-      transition: .35s ease;
-    }
-    .modal-backdrop.show .modal { transform: translateY(0) scale(1); }
-    .modal h2 { font-size: clamp(3rem, 8vw, 5.4rem); color: var(--gold); text-shadow: var(--glow); }
-    .modal p { margin: 18px 0 28px; line-height: 1.75; color: white; }
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .8s, transform .8s;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    .falling-layer { position: fixed; inset: 0; z-index: 54; pointer-events: none; overflow: hidden; }
-    .falling { position: absolute; top: -48px; font-size: 26px; animation: fall linear forwards; filter: drop-shadow(0 5px 12px rgba(0,0,0,.28)); }
-    @keyframes fall { to { transform: translateY(110vh) rotate(720deg); opacity: 0; } }
-
-    footer { padding: 34px 16px 90px; text-align: center; color: rgba(255,255,255,.74); }
-
-    @media (max-width: 850px) {
-      .split, .split.reverse { grid-template-columns: 1fr; }
-      .split.reverse .image-frame { order: -1; }
-      .countdown-grid { grid-template-columns: repeat(2, 1fr); }
-      .safari-grid { grid-template-columns: repeat(2, 1fr); }
-      .typing { white-space: normal; border-right: 0; animation: pulseText 1.8s ease-in-out infinite alternate; }
-    }
-    @media (max-width: 520px) {
-      .container { width: min(calc(100% - 22px), var(--max)); }
-      .hero-card { border-radius: 28px; }
-      .countdown-grid, .safari-grid { grid-template-columns: 1fr; }
-      .proposal-actions { align-items: center; flex-direction: column; }
-      .btn { width: 100%; max-width: 330px; }
-      .arrow { width: 42px; height: 42px; }
-      .music-toggle { left: 12px; right: 12px; width: auto; }
-      .toast { width: calc(100% - 24px); border-radius: 18px; }
-    }
-  </style>
+</style>
 </head>
 <body>
-  <div class="hero-overlay" id="heroOverlay" aria-label="Romantic intro screen">
-    <div class="hero-slide"></div>
-    <div class="hero-slide"></div>
-    <div class="hero-slide"></div>
-    <div class="cloud" style="--w: 270px; --top: 16%; --o: .28; --dur: 58s; --delay: -10s; --y: 24px;"></div>
-    <div class="cloud" style="--w: 430px; --top: 33%; --o: .18; --dur: 76s; --delay: -28s; --y: -16px;"></div>
-    <div class="cloud" style="--w: 340px; --top: 68%; --o: .20; --dur: 68s; --delay: -42s; --y: 18px;"></div>
-    <div class="cloud" style="--w: 210px; --top: 80%; --o: .24; --dur: 52s; --delay: -4s; --y: -28px;"></div>
 
-    <div class="hero-card">
-      <span class="eyebrow">Luxury Date Invitation</span>
-      <h1>To My Dearest Pooja ❤️</h1>
-      <p class="subtitle">I Have Planned A Magical Day Just For Us</p>
-      <div class="typing" aria-label="Clouds. Adventure. Love. Memories.">Clouds. Adventure. Love. Memories.</div>
-      <button class="btn" id="enterBtn">Enter Our Love Story ❤️</button>
+<!-- Cloud layer -->
+<div class="cloud-layer">
+  <div class="cloud c1"></div>
+  <div class="cloud c2"></div>
+  <div class="cloud c3"></div>
+  <div class="cloud c4"></div>
+  <div class="cloud c5"></div>
+  <div class="cloud c6"></div>
+  <div class="cloud c7"></div>
+  <div class="cloud c8"></div>
+</div>
+
+<!-- Petal layer -->
+<div class="petal-layer" id="petalLayer"></div>
+
+<!-- Music bar -->
+<div class="music-bar" id="musicBar" onclick="toggleMusic()" title="Play Ninnindale ♪">
+  <span class="music-icon">🎵</span>
+  <span id="musicLabel" style="font-size:13px;">Play ♪ Ninnindale</span>
+  <span class="music-note">♪</span>
+</div>
+
+<!-- Hidden audio with YouTube embed approach -->
+<div id="ytContainer" style="position:fixed;bottom:-200px;left:-200px;opacity:0;pointer-events:none;width:1px;height:1px;overflow:hidden;">
+  <iframe id="ytFrame" width="1" height="1" src="" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+</div>
+
+<div class="wrapper">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-date">✦ July 04, 2026 · A Day Written in Stars ✦</div>
+    <h1 class="hero-title">My Dearest<br><span>Pooja</span></h1>
+    <p class="hero-subtitle">Will you let me make this day unforgettable?</p>
+    <div class="heart-divider">💕 ✨ 💕</div>
+  </div>
+
+  <!-- LOVE LETTER -->
+  <div class="letter-wrap reveal">
+    <div class="envelope-flap"></div>
+    <div class="letter-card">
+      <div class="letter-seal">💌</div>
+      <div class="letter-greeting">My Love,</div>
+      <div class="letter-body">
+        <p>Some days are too precious to leave to chance. This <em>July 4th</em>, I want to wrap you in a day that feels like a dream — misty hilltops, wild forests, the open road, and most importantly, <em>you beside me</em>.</p>
+        <p>I've planned every moment with care — from the quiet early morning when I come to pick you up, to the golden hour when we stand together above the clouds on <em>Himavad Gopalaswamy Betta</em>, temple bells in the distance, the whole of Bandipur spread below us like a secret the earth kept just for us.</p>
+        <p>We'll breathe in the forest at <em>Bandipura Safari</em>, hear the rustle of leaves no city can offer, and carry home a story that only the two of us will know by heart.</p>
+        <p>Our chariot for the day? A <em>Skoda Kylaq — Deep Black</em>, sleek and proud, carrying us through the Western Ghats like royalty. The road itself will feel like a love letter written in curves and green.</p>
+        <p>I don't need much. Just your smile at 5 AM, your hand in mine on the winding ghat road, and the certainty that <em>every mile with you is worth it</em>.</p>
+        <p>All I need is one word from you, my love.</p>
+      </div>
+      <div class="letter-sign">Forever yours,<br>Your Someone Special 💕</div>
     </div>
   </div>
 
-  <audio id="loveSong" preload="auto" loop title="Ninna Danigaagi">
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
-  </audio>
-  <button class="music-toggle" id="musicToggle" aria-pressed="false">🎵 Music Off</button>
-  <div class="toast" id="toast">Looks like destiny already chose YES ❤️</div>
-  <div class="falling-layer" id="fallingLayer" aria-hidden="true"></div>
-
-  <main id="pageContent">
-    <section id="countdown">
-      <div class="container">
-        <div class="countdown-card glass" data-aos="zoom-in">
-          <span class="eyebrow">15 June 2026 • 04:30 AM</span>
-          <div class="section-title" style="margin-bottom:0">
-            <h2>Our Adventure Begins In</h2>
-            <p>Every second is bringing us closer to clouds, forests, prayers, laughter, and one unforgettable day together.</p>
-          </div>
-          <div class="countdown-grid" aria-live="polite">
-            <div class="time-box"><span id="days">00</span><small>Days</small></div>
-            <div class="time-box"><span id="hours">00</span><small>Hours</small></div>
-            <div class="time-box"><span id="minutes">00</span><small>Minutes</small></div>
-            <div class="time-box"><span id="seconds">00</span><small>Seconds</small></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="chariot">
-      <div class="container split">
-        <div class="content-card glass" data-aos="fade-right">
-          <span class="eyebrow">Our Royal Chariot 🚘</span>
-          <h2>Deep Black. Dream Ready.</h2>
-          <p>Not horses. Not a golden carriage. Our Deep Black Skoda Kylaq will carry us through misty roads, dense forests, clouds, and beautiful memories. Let the scenic drive begin!</p>
-        </div>
-        <div class="image-frame" data-aos="fade-left">
-          <img src="https://imgd.aeplcdn.com/664x374/n/k6tblib_1902685.jpg?q=80" alt="Deep Black Skoda Kylaq" />
-        </div>
-      </div>
-    </section>
-
-    <section id="destination">
-      <div class="container split reverse">
-        <div class="image-frame" data-aos="fade-right">
-          <img src="https://www.tirthayatra.org/wp-content/uploads/2022/01/10-scaled.jpg" alt="Gopalaswamy Betta hilltop temple in clouds" />
-        </div>
-        <div class="content-card glass" data-aos="fade-left">
-          <span class="eyebrow">Destination ☁️</span>
-          <h2>Gopalaswamy Betta</h2>
-          <p>A magical hilltop where floating clouds kiss the earth, the sunrise paints the sky in gold, and divine beauty makes every quiet moment feel like a blessing made just for us.</p>
-          <ul class="feature-list">
-            <li>☁️ Clouds at eye level for dreamy hand-in-hand walks.</li>
-            <li>🌅 A sunrise that turns the hills into pure gold.</li>
-            <li>⛰️ The highest peak in Bandipur National Park's landscape.</li>
-            <li>🦌 Wildlife around the forest roads and safari trails.</li>
-            <li>❤️ A romantic escape wrapped in mist, devotion, and memories.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <div class="container">
-        <div class="section-title" data-aos="fade-up">
-          <span class="eyebrow">Photo Gallery Carousel 📸</span>
-          <h2>Moments Waiting For Us</h2>
-          <p>Eight frames of our dream day: safari wonders, misty hills, scenic roads, and our beautiful Kylaq.</p>
-        </div>
-        <div class="carousel glass" data-aos="zoom-in-up" aria-label="Romantic trip gallery">
-          <div class="carousel-track" id="carouselTrack">
-            <article class="slide"><img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=1600&q=85" alt="Bandipur Safari Elephant"><div class="caption">Bandipur Safari Elephant</div></article>
-            <article class="slide"><img src="https://images.unsplash.com/photo-1484406566174-9da000fda645?auto=format&fit=crop&w=1600&q=85" alt="Bandipur Safari Deer"><div class="caption">Bandipur Safari Deer</div></article>
-            <article class="slide"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=85" alt="Gopalaswamy Betta Mist"><div class="caption">Gopalaswamy Betta Mist</div></article>
-            <article class="slide"><img src="https://www.tirthayatra.org/wp-content/uploads/2022/01/10-scaled.jpg" alt="Gopalaswamy Betta Temple"><div class="caption">Gopalaswamy Betta Temple</div></article>
-            <article class="slide"><img src="https://images.unsplash.com/photo-1542385150-f38b5d38ccb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=85" alt="Bangalore to Gopalaswamy Betta Scenic Road"><div class="caption">Bangalore to Gopalaswamy Betta Scenic Road</div></article>
-            <article class="slide"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=85" alt="Bangalore to Gopalaswamy Betta Scenic Road"><div class="caption">Bangalore to Gopalaswamy Betta Scenic Road</div></article>
-            <article class="slide"><img src="https://imgd.aeplcdn.com/664x374/n/k6tblib_1902685.jpg?q=80" alt="Skoda Kylaq Deep Black"><div class="caption">Skoda Kylaq Deep Black</div></article>
-            <article class="slide"><img src="https://imgd.aeplcdn.com/664x374/n/k6tblib_1902685.jpg?q=80" alt="Skoda Kylaq Deep Black"><div class="caption">Skoda Kylaq Deep Black</div></article>
-          </div>
-          <button class="arrow prev" id="prevSlide" aria-label="Previous gallery image"><i class="fa-solid fa-chevron-left"></i></button>
-          <button class="arrow next" id="nextSlide" aria-label="Next gallery image"><i class="fa-solid fa-chevron-right"></i></button>
-          <div class="dots" id="carouselDots" aria-label="Gallery pagination"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="timeline">
-      <div class="container">
-        <div class="section-title" data-aos="fade-up">
-          <span class="eyebrow">Hourly Date Timeline ❤️</span>
-          <h2>Our One-Day Love Story</h2>
-        </div>
-        <div class="timeline">
-          <div class="timeline-card" data-aos="fade-up"><time>04:30 AM ❤️ Pick up my princess.</time><p>I can't wait to see your sleepy, beautiful smile as we start our journey.</p></div>
-          <div class="timeline-card" data-aos="fade-up"><time>05:00 AM ☕ Tea and sleepy conversations on the road.</time><p>The best journeys always begin with a warm cup and holding your hand.</p></div>
-          <div class="timeline-card" data-aos="fade-up"><time>07:30 AM ☁️ Reach Gopalaswamy Betta (Hello Clouds!).</time><p>We will literally be walking through the mist, hand in hand, feeling on top of the world.</p></div>
-          <div class="timeline-card" data-aos="fade-up"><time>08:00 AM 🙏 Temple visit and blessings.</time><p>Let's start our beautiful day by praying for a lifetime of togetherness.</p></div>
-          <div class="timeline-card" data-aos="fade-up"><time>09:00 AM 📸 Romantic photoshoot in the mist.</time><p>I want to capture every perfect angle of you against the magical clouds.</p></div>
-          <div class="timeline-card" data-aos="fade-up"><time>10:30 AM 🍳 Breakfast date.</time><p>Time to fuel up with some delicious food and share our favorite morning moments.</p></div>
-          <div class="timeline-card" data-aos="fade-up"><time>12:00 PM 🚘 Scenic Bandipur drive.</time><p>We'll roll the windows down, play our favorite songs, and enjoy the dense forest breeze.</p></div>
-          <div class="timeline-card" data-aos="fade-up"><time>02:00 PM 🦌 Bandipur Safari adventure.</time><p>Get ready to spot some majestic elephants and beautiful deer in their natural wild home.</p></div>
-          <div class="timeline-card" data-aos="fade-up"><time>04:00 PM 🍦 Ice cream date.</time><p>A sweet treat for the sweetest person in my life to cool down after the wild safari.</p></div>
-          <div class="timeline-card" data-aos="fade-up"><time>05:30 PM 🌅 Sunset drive back.</time><p>We will chase the golden hour as the sky turns into the exact color of your beautiful blush.</p></div>
-          <div class="timeline-card" data-aos="fade-up"><time>07:00 PM 🍽️ Dinner together.</time><p>A cozy, romantic meal to talk about all the amazing things we experienced today.</p></div>
-          <div class="timeline-card" data-aos="fade-up"><time>09:00 PM ❤️ Drop my princess home with unforgettable memories.</time><p>The day will end, but my love for you will have grown even deeper.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="safari">
-      <div class="container">
-        <div class="section-title" data-aos="fade-up">
-          <span class="eyebrow">Bandipur Safari Grid 🦁</span>
-          <h2>Wild Little Wonders</h2>
-        </div>
-        <div class="safari-grid">
-          <div class="safari-card glass" data-aos="flip-left"><i class="fa-solid fa-paw"></i><h3>Elephants</h3></div>
-          <div class="safari-card glass" data-aos="flip-left" data-aos-delay="100"><i class="fa-solid fa-horse"></i><h3>Deer</h3></div>
-          <div class="safari-card glass" data-aos="flip-left" data-aos-delay="200"><i class="fa-solid fa-tree"></i><h3>Forest Trails</h3></div>
-          <div class="safari-card glass" data-aos="flip-left" data-aos-delay="300"><i class="fa-solid fa-camera-retro"></i><h3>Safari Memories</h3></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="map">
-      <div class="container">
-        <div class="section-title" data-aos="fade-up">
-          <span class="eyebrow">Google Maps 🗺️</span>
-          <h2>Route To The Clouds</h2>
-        </div>
-        <div class="map-wrap glass" data-aos="zoom-in">
-          <iframe title="Map to Himavad Gopalaswamy Betta" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Himavad%20Gopalaswamy%20Betta%2C%20Karnataka&output=embed"></iframe>
-        </div>
-        <div class="map-actions"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Himavad%20Gopalaswamy%20Betta%2C%20Karnataka" target="_blank" rel="noopener noreferrer">Open Navigation</a></div>
-      </div>
-    </section>
-
-    <section id="letter">
-      <div class="container">
-        <div class="section-title" data-aos="fade-up">
-          <span class="eyebrow">Love Letter 💌</span>
-          <h2>From My Heart</h2>
-        </div>
-        <div class="letter-card" data-aos="fade-up">
-          <p>My Dearest Pooja,</p>
-          <p>Among all beautiful places in Karnataka, none are as beautiful as the smile you bring to my life. I want to spend one unforgettable day with you—driving through misty roads, watching clouds embrace the hills, sharing ice creams, laughing endlessly, and creating memories we will cherish forever.</p>
-          <p>This trip is not just about visiting Gopalaswamy Betta. It's about spending a beautiful day with the woman I want beside me for every sunrise, every adventure, and every chapter of life.</p>
-          <p>Will you join me on this magical journey?</p>
-          <p class="signature">Forever Yours,<br>Channu ❤️</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="proposal">
-      <div class="container proposal">
-        <div class="content-card glass" data-aos="zoom-in-up">
-          <span class="eyebrow">The Most Important Question</span>
-          <h2>Will You Join Me On This Adventure? ❤️</h2>
-          <div class="proposal-actions" id="proposalActions">
-            <button class="btn" id="yesBtn">YES ❤️ Let's Create Memories</button>
-            <button class="btn" id="noBtn" type="button">NO 🙈 Catch Me If You Can</button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <div class="modal-backdrop" id="yesModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal glass">
-      <h2 id="modalTitle">YAYYYYY ❤️</h2>
-      <p>Best Date Ever Confirmed! Clouds are ready. Bandipur is waiting. The Kylaq is fueled. And my heart is already smiling. See you on our dream date, my love ❤️</p>
-      <button class="btn" id="closeModal">Close With A Kiss 😘</button>
-    </div>
+  <!-- OUR JOURNEY MAP -->
+  <div class="section-title reveal">
+    <h2>Our <span>Journey</span> — The Road We'll Travel</h2>
+    <div class="title-line"></div>
   </div>
 
-  <footer>Made with clouds, safari dreams, and endless love for Pooja ❤️</footer>
+  <div class="roadmap reveal">
+    <svg class="road-svg-container" viewBox="0 0 820 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+      <defs>
+        <marker id="arrowRoad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#c2185b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <linearGradient id="roadGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#6d4c5e;stop-opacity:.15"/>
+          <stop offset="50%" style="stop-color:#c2185b;stop-opacity:.25"/>
+          <stop offset="100%" style="stop-color:#6d4c5e;stop-opacity:.15"/>
+        </linearGradient>
+        <filter id="softShadow">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#c2185b" flood-opacity="0.15"/>
+        </filter>
+      </defs>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-  <script>
-    const enterBtn = document.getElementById('enterBtn');
-    const heroOverlay = document.getElementById('heroOverlay');
-    const audio = document.getElementById('loveSong');
-    const musicToggle = document.getElementById('musicToggle');
-    const toast = document.getElementById('toast');
-    const fallingLayer = document.getElementById('fallingLayer');
-    const yesBtn = document.getElementById('yesBtn');
-    const noBtn = document.getElementById('noBtn');
-    const yesModal = document.getElementById('yesModal');
-    const closeModal = document.getElementById('closeModal');
-    let entered = false;
-    let noAttempts = 0;
-    let toastTimer;
+      <!-- Road path base -->
+      <path d="M80 190 C160 190 200 140 300 140 C400 140 430 190 530 180 C630 170 680 130 740 130"
+            fill="none" stroke="#e8d5e0" stroke-width="22" stroke-linecap="round"/>
+      <!-- Road dashes -->
+      <path d="M80 190 C160 190 200 140 300 140 C400 140 430 190 530 180 C630 170 680 130 740 130"
+            fill="none" stroke="white" stroke-width="3" stroke-linecap="round"
+            stroke-dasharray="18 14" opacity="0.8"/>
+      <!-- Road outline -->
+      <path d="M80 190 C160 190 200 140 300 140 C400 140 430 190 530 180 C630 170 680 130 740 130"
+            fill="none" stroke="#c2185b" stroke-width="2.5" stroke-linecap="round"
+            stroke-dasharray="8 6" opacity="0.5" marker-end="url(#arrowRoad)"/>
 
-    AOS.init({ duration: 900, once: false, offset: 90, easing: 'ease-out-cubic' });
+      <!-- Location circles + labels -->
+      <!-- Bengaluru -->
+      <circle cx="80" cy="190" r="22" fill="white" stroke="#c2185b" stroke-width="2.5" filter="url(#softShadow)"/>
+      <text x="80" y="186" text-anchor="middle" font-family="'Playfair Display',serif" font-size="18" fill="#c2185b">🏙</text>
+      <text x="80" y="200" text-anchor="middle" font-family="'Playfair Display',serif" font-size="9" fill="#c2185b">📍</text>
+      <text x="80" y="228" text-anchor="middle" font-family="'Playfair Display',serif" font-size="13" fill="#2d1b2e" font-weight="600">Bengaluru</text>
+      <text x="80" y="243" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="11" fill="#8d6070" font-style="italic">Start • ~5 AM</text>
 
-    enterBtn.addEventListener('click', async () => {
-      entered = true;
-      document.body.classList.add('entered');
-      heroOverlay.classList.add('hidden');
-      try {
-        audio.volume = 0.48;
-        await audio.play();
-        musicToggle.textContent = '🎵 Music On';
-        musicToggle.setAttribute('aria-pressed', 'true');
-      } catch (error) {
-        musicToggle.textContent = '🎵 Music Off';
-      }
-      setTimeout(() => AOS.refresh(), 500);
-    });
+      <!-- Mysuru midpoint label -->
+      <rect x="270" y="95" width="68" height="24" rx="12" fill="rgba(255,255,255,0.85)" stroke="#c2185b" stroke-width="1"/>
+      <text x="304" y="111" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="12" fill="#c2185b" font-style="italic">via Mysuru</text>
+      <line x1="300" y1="140" x2="300" y2="119" stroke="#c2185b" stroke-width="1" stroke-dasharray="3 3"/>
 
-    musicToggle.addEventListener('click', async () => {
-      if (!entered) return showToast('Click Enter first, my love ❤️');
-      if (audio.paused) {
-        try {
-          await audio.play();
-          musicToggle.textContent = '🎵 Music On';
-          musicToggle.setAttribute('aria-pressed', 'true');
-        } catch (error) {
-          showToast('Music needs one more tap ❤️');
+      <!-- Distance badge -->
+      <rect x="445" y="152" width="74" height="22" rx="11" fill="rgba(194,24,91,0.1)" stroke="rgba(194,24,91,0.3)" stroke-width="1"/>
+      <text x="482" y="167" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="11.5" fill="#c2185b">~220 km</text>
+
+      <!-- Gopalaswamy Betta -->
+      <circle cx="530" cy="180" r="26" fill="white" stroke="#c2185b" stroke-width="2.5" filter="url(#softShadow)"/>
+      <text x="530" y="175" text-anchor="middle" font-family="serif" font-size="20">⛪</text>
+      <text x="530" y="192" text-anchor="middle" font-family="serif" font-size="10">🌫</text>
+      <text x="530" y="222" text-anchor="middle" font-family="'Playfair Display',serif" font-size="12" fill="#2d1b2e" font-weight="600">Gopalaswamy</text>
+      <text x="530" y="236" text-anchor="middle" font-family="'Playfair Display',serif" font-size="12" fill="#2d1b2e" font-weight="600">Betta</text>
+      <text x="530" y="251" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="11" fill="#8d6070" font-style="italic">~9 AM</text>
+
+      <!-- Bandipura Safari -->
+      <circle cx="740" cy="130" r="26" fill="white" stroke="#c2185b" stroke-width="2.5" filter="url(#softShadow)"/>
+      <text x="740" y="126" text-anchor="middle" font-family="serif" font-size="20">🐘</text>
+      <text x="740" y="143" text-anchor="middle" font-family="serif" font-size="10">🌿</text>
+      <text x="740" y="175" text-anchor="middle" font-family="'Playfair Display',serif" font-size="12" fill="#2d1b2e" font-weight="600">Bandipura</text>
+      <text x="740" y="189" text-anchor="middle" font-family="'Playfair Display',serif" font-size="12" fill="#2d1b2e" font-weight="600">Safari</text>
+      <text x="740" y="204" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="11" fill="#8d6070" font-style="italic">~2 PM</text>
+
+      <!-- Car icon on road -->
+      <g transform="translate(295,120)" style="animation:carMove 6s ease-in-out infinite alternate;">
+        <rect x="-18" y="-9" width="36" height="18" rx="5" fill="#1a1a2e" stroke="#c2185b" stroke-width="1"/>
+        <rect x="-11" y="-15" width="22" height="10" rx="3" fill="#2d2d4e"/>
+        <circle cx="-10" cy="9" r="5" fill="#333" stroke="#c2185b" stroke-width="1"/>
+        <circle cx="10" cy="9" r="5" fill="#333" stroke="#c2185b" stroke-width="1"/>
+        <rect x="-7" y="-13" width="6" height="7" rx="1" fill="#87ceeb" opacity=".7"/>
+        <rect x="1" y="-13" width="6" height="7" rx="1" fill="#87ceeb" opacity=".7"/>
+        <!-- headlight glow -->
+        <ellipse cx="20" cy="0" rx="8" ry="4" fill="#ffd700" opacity=".25"/>
+      </g>
+      <style>
+        @keyframes carMove {
+          0%   { transform: translate(200px, 130px); }
+          100% { transform: translate(450px, 155px); }
         }
-      } else {
-        audio.pause();
-        musicToggle.textContent = '🎵 Music Off';
-        musicToggle.setAttribute('aria-pressed', 'false');
-      }
-    });
+      </style>
 
-    function updateCountdown() {
-      const target = new Date('2026-06-15T04:30:00+05:30').getTime();
-      const diff = Math.max(0, target - Date.now());
-      const day = 24 * 60 * 60 * 1000;
-      const hour = 60 * 60 * 1000;
-      const minute = 60 * 1000;
-      document.getElementById('days').textContent = String(Math.floor(diff / day)).padStart(2, '0');
-      document.getElementById('hours').textContent = String(Math.floor((diff % day) / hour)).padStart(2, '0');
-      document.getElementById('minutes').textContent = String(Math.floor((diff % hour) / minute)).padStart(2, '0');
-      document.getElementById('seconds').textContent = String(Math.floor((diff % minute) / 1000)).padStart(2, '0');
+      <!-- terrain hints -->
+      <!-- Hills near betta -->
+      <path d="M480 260 Q510 225 540 255 Q565 225 595 255" fill="none" stroke="#c8e6c9" stroke-width="2" opacity=".6"/>
+      <path d="M485 260 Q510 232 540 255 Q565 232 590 255" fill="rgba(200,230,201,0.3)"/>
+      <!-- Trees near safari -->
+      <text x="680" y="260" font-size="18" opacity=".5">🌳</text>
+      <text x="705" y="255" font-size="14" opacity=".4">🌿</text>
+      <text x="765" y="258" font-size="16" opacity=".4">🌲</text>
+
+      <!-- Mist clouds near Betta -->
+      <ellipse cx="535" cy="155" rx="28" ry="10" fill="rgba(255,255,255,0.45)" opacity=".7"/>
+      <ellipse cx="520" cy="148" rx="18" ry="7" fill="rgba(255,255,255,0.4)" opacity=".6"/>
+
+      <!-- Return arrow (dashed) -->
+      <path d="M740 330 C680 330 600 340 530 340 C400 340 300 330 80 300"
+            fill="none" stroke="#c2185b" stroke-width="1.5" stroke-dasharray="6 5" opacity=".3" marker-end="url(#arrowRoad)"/>
+      <text x="410" y="356" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="11" fill="#c2185b" font-style="italic" opacity=".6">Return Journey — Memories in tow ♡</text>
+    </svg>
+  </div>
+
+  <!-- DESTINATIONS -->
+  <div class="section-title reveal">
+    <h2>Our <span>Destinations</span></h2>
+    <div class="title-line"></div>
+  </div>
+
+  <div class="dest-cards">
+    <!-- Gopalaswamy Betta -->
+    <div class="dest-card">
+      <div class="dest-img-wrap">
+        <!-- Scenic illustrated SVG for Gopalaswamy Betta -->
+        <svg class="dest-scene" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+          <!-- Sky gradient -->
+          <defs>
+            <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#87CEEB"/>
+              <stop offset="100%" stop-color="#e0f0fa"/>
+            </linearGradient>
+            <linearGradient id="hill1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#4CAF50"/>
+              <stop offset="100%" stop-color="#2E7D32"/>
+            </linearGradient>
+            <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#66BB6A"/>
+              <stop offset="100%" stop-color="#388E3C"/>
+            </linearGradient>
+            <linearGradient id="mist1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
+              <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+            </linearGradient>
+          </defs>
+          <!-- Sky -->
+          <rect width="400" height="220" fill="url(#sky1)"/>
+          <!-- Far hills -->
+          <ellipse cx="80" cy="160" rx="110" ry="70" fill="#a5d6a7" opacity=".6"/>
+          <ellipse cx="260" cy="155" rx="130" ry="75" fill="#81c784" opacity=".5"/>
+          <ellipse cx="380" cy="170" rx="90" ry="60" fill="#a5d6a7" opacity=".6"/>
+          <!-- Main hill -->
+          <path d="M60 220 Q120 80 200 60 Q280 80 340 220" fill="url(#hill1)"/>
+          <!-- Foreground hill -->
+          <path d="M0 220 Q50 180 120 175 Q200 165 260 175 Q340 180 400 220" fill="url(#hill2)"/>
+          <!-- Temple on top -->
+          <!-- Temple base -->
+          <rect x="182" y="56" width="36" height="26" fill="#f5f0e0" stroke="#c2185b" stroke-width=".8"/>
+          <!-- Gopura/shikhara -->
+          <path d="M182 56 L186 30 L200 22 L214 30 L218 56Z" fill="#e8d5a0" stroke="#c2185b" stroke-width=".8"/>
+          <path d="M190 56 L193 38 L200 32 L207 38 L210 56" fill="#d4a853" opacity=".6"/>
+          <!-- Flag -->
+          <line x1="200" y1="22" x2="200" y2="10" stroke="#c2185b" stroke-width="1"/>
+          <polygon points="200,10 210,14 200,18" fill="#c2185b"/>
+          <!-- Temple door -->
+          <rect x="193" y="68" width="14" height="14" rx="3" fill="#8B4513" opacity=".8"/>
+          <!-- Temple steps -->
+          <rect x="178" y="82" width="44" height="4" rx="1" fill="#e0d8c0"/>
+          <rect x="180" y="86" width="40" height="4" rx="1" fill="#d4cdb0"/>
+          <!-- Mist layers -->
+          <ellipse cx="200" cy="110" rx="140" ry="30" fill="rgba(255,255,255,0.55)"/>
+          <ellipse cx="160" cy="125" rx="100" ry="22" fill="rgba(255,255,255,0.45)"/>
+          <ellipse cx="250" cy="130" rx="120" ry="20" fill="rgba(255,255,255,0.4)"/>
+          <!-- Clouds in sky -->
+          <ellipse cx="60" cy="40" rx="45" ry="18" fill="rgba(255,255,255,0.75)"/>
+          <ellipse cx="40" cy="35" rx="28" ry="15" fill="rgba(255,255,255,0.7)"/>
+          <ellipse cx="330" cy="35" rx="50" ry="18" fill="rgba(255,255,255,0.7)"/>
+          <ellipse cx="350" cy="28" rx="32" ry="14" fill="rgba(255,255,255,0.75)"/>
+          <!-- Trees -->
+          <ellipse cx="90" cy="168" rx="16" ry="22" fill="#2E7D32"/>
+          <ellipse cx="310" cy="170" rx="14" ry="20" fill="#1B5E20"/>
+          <ellipse cx="340" cy="175" rx="12" ry="18" fill="#2E7D32"/>
+          <ellipse cx="65" cy="178" rx="11" ry="16" fill="#388E3C"/>
+          <!-- Wild elephant silhouette -->
+          <g transform="translate(145,178)" opacity=".7">
+            <ellipse cx="20" cy="20" rx="20" ry="14" fill="#5D4037"/>
+            <ellipse cx="38" cy="16" rx="14" ry="10" fill="#5D4037"/><!-- head -->
+            <rect x="36" y="22" width="6" height="18" rx="3" fill="#5D4037"/><!-- trunk -->
+            <rect x="7" y="30" width="6" height="14" rx="2" fill="#5D4037"/>
+            <rect x="16" y="31" width="6" height="14" rx="2" fill="#5D4037"/>
+            <rect x="26" y="30" width="6" height="14" rx="2" fill="#5D4037"/>
+          </g>
+          <!-- Photo label overlay -->
+          <rect x="0" y="170" width="400" height="50" fill="url(#mist1)"/>
+        </svg>
+        <div class="img-overlay"></div>
+        <div class="dest-img-label">⛪ Himavad Gopalaswamy Betta</div>
+      </div>
+      <div class="dest-info">
+        <div class="dest-name">Himavad Gopalaswamy Betta</div>
+        <div class="dest-desc">A misty hilltop temple at 1450m, soaring above the Bandipur wilderness. We'll stand where clouds hug the earth and Lord Krishna watches over the valley below.</div>
+        <span class="dest-tag">🌫 Mist · Temple · Wildlife</span>
+        <span class="dest-tag" style="margin-left:6px;">📍 ~220 km from Bengaluru</span>
+      </div>
+    </div>
+
+    <!-- Bandipura Safari -->
+    <div class="dest-card">
+      <div class="dest-img-wrap">
+        <!-- Scenic illustrated SVG for Bandipura Safari -->
+        <svg class="dest-scene" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFA726"/>
+              <stop offset="40%" stop-color="#FFD54F"/>
+              <stop offset="100%" stop-color="#e8f5e9"/>
+            </linearGradient>
+            <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8BC34A"/>
+              <stop offset="100%" stop-color="#558B2F"/>
+            </linearGradient>
+          </defs>
+          <!-- Sky -->
+          <rect width="400" height="220" fill="url(#sky2)"/>
+          <!-- Sun -->
+          <circle cx="340" cy="45" r="28" fill="#FFD700" opacity=".85"/>
+          <circle cx="340" cy="45" r="38" fill="#FFD700" opacity=".25"/>
+          <!-- Clouds -->
+          <ellipse cx="80" cy="45" rx="55" ry="20" fill="rgba(255,255,255,0.65)"/>
+          <ellipse cx="55" cy="38" rx="35" ry="17" fill="rgba(255,255,255,0.7)"/>
+          <ellipse cx="200" cy="35" rx="45" ry="16" fill="rgba(255,255,255,0.55)"/>
+          <!-- Forest background -->
+          <rect x="0" y="110" width="400" height="110" fill="url(#ground)"/>
+          <!-- Tree silhouettes (background) -->
+          <g opacity=".6">
+            <rect x="20" y="70" width="8" height="55" fill="#33691E"/>
+            <ellipse cx="24" cy="70" rx="20" ry="28" fill="#388E3C"/>
+            <rect x="60" y="65" width="8" height="60" fill="#33691E"/>
+            <ellipse cx="64" cy="65" rx="22" ry="30" fill="#2E7D32"/>
+            <rect x="105" y="72" width="7" height="53" fill="#33691E"/>
+            <ellipse cx="108" cy="72" rx="18" ry="26" fill="#43A047"/>
+            <rect x="305" y="68" width="8" height="57" fill="#33691E"/>
+            <ellipse cx="309" cy="68" rx="21" ry="28" fill="#388E3C"/>
+            <rect x="350" y="62" width="9" height="63" fill="#33691E"/>
+            <ellipse cx="354" cy="62" rx="24" ry="32" fill="#2E7D32"/>
+          </g>
+          <!-- Jeep track / dirt road -->
+          <path d="M0 200 Q100 190 200 185 Q300 180 400 195" fill="#D7CCC8" opacity=".5"/>
+          <path d="M0 202 Q100 192 200 187 Q300 182 400 197" fill="none" stroke="#A1887F" stroke-width="1.5" stroke-dasharray="8 6" opacity=".6"/>
+          <!-- Safari Jeep -->
+          <g transform="translate(150,175)">
+            <rect x="0" y="-16" width="62" height="28" rx="5" fill="#5D4037"/>
+            <rect x="8" y="-28" width="40" height="16" rx="3" fill="#6D4C41"/>
+            <!-- windows -->
+            <rect x="12" y="-26" width="12" height="10" rx="2" fill="#B3E5FC" opacity=".8"/>
+            <rect x="28" y="-26" width="12" height="10" rx="2" fill="#B3E5FC" opacity=".8"/>
+            <!-- wheels -->
+            <circle cx="12" cy="12" r="9" fill="#37474F" stroke="#546E7A" stroke-width="1.5"/>
+            <circle cx="50" cy="12" r="9" fill="#37474F" stroke="#546E7A" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="4" fill="#78909C"/>
+            <circle cx="50" cy="12" r="4" fill="#78909C"/>
+            <!-- Headlight -->
+            <rect x="55" y="-8" width="8" height="8" rx="1" fill="#FFE082"/>
+            <!-- People silhouettes in jeep -->
+            <ellipse cx="18" cy="-26" rx="5" ry="5" fill="#3E2723"/>
+            <ellipse cx="35" cy="-26" rx="5" ry="5" fill="#4E342E"/>
+          </g>
+          <!-- Animals -->
+          <!-- Deer -->
+          <g transform="translate(50,178)" opacity=".85">
+            <ellipse cx="15" cy="14" rx="12" ry="8" fill="#8D6E63"/>
+            <ellipse cx="25" cy="8" rx="8" ry="7" fill="#8D6E63"/>
+            <line x1="6" y1="19" x2="4" y2="30" stroke="#795548" stroke-width="2.5"/>
+            <line x1="12" y1="20" x2="10" y2="30" stroke="#795548" stroke-width="2.5"/>
+            <line x1="18" y1="20" x2="17" y2="30" stroke="#795548" stroke-width="2.5"/>
+            <line x1="24" y1="19" x2="24" y2="30" stroke="#795548" stroke-width="2.5"/>
+            <!-- antlers -->
+            <line x1="24" y1="4" x2="20" y2="-4" stroke="#795548" stroke-width="1.5"/>
+            <line x1="26" y1="4" x2="30" y2="-3" stroke="#795548" stroke-width="1.5"/>
+            <line x1="20" y1="-4" x2="17" y2="-7" stroke="#795548" stroke-width="1"/>
+            <line x1="30" y1="-3" x2="33" y2="-7" stroke="#795548" stroke-width="1"/>
+          </g>
+          <!-- Bird in sky -->
+          <path d="M270 55 Q275 50 280 55" fill="none" stroke="#37474F" stroke-width="1.5"/>
+          <path d="M285 52 Q290 47 295 52" fill="none" stroke="#37474F" stroke-width="1.5"/>
+          <path d="M255 60 Q260 55 265 60" fill="none" stroke="#37474F" stroke-width="1.5"/>
+          <!-- Forest dust/atmosphere at base -->
+          <rect x="0" y="195" width="400" height="25" fill="rgba(139,100,60,0.2)"/>
+        </svg>
+        <div class="img-overlay"></div>
+        <div class="dest-img-label">🐘 Bandipura Safari</div>
+      </div>
+      <div class="dest-info">
+        <div class="dest-name">Bandipura National Park Safari</div>
+        <div class="dest-desc">India's finest wildlife canvas — elephants, deer, leopards and birdsong. We'll ride into the jungle at golden hour and let the wild world remind us how alive we are.</div>
+        <span class="dest-tag">🐘 Safari · Wildlife · Jungle</span>
+        <span class="dest-tag" style="margin-left:6px;">🌿 Bandipur Tiger Reserve</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHARIOT -->
+  <div class="section-title reveal">
+    <h2>Our <span>Chariot</span></h2>
+    <div class="title-line"></div>
+  </div>
+
+  <div class="chariot-section reveal">
+    <div class="chariot-title">🖤 Skoda Kylaq — Deep Black</div>
+    <!-- Car SVG illustration -->
+    <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;height:auto;display:block;margin:0 auto;">
+      <defs>
+        <linearGradient id="carBody" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#2a2a2a"/>
+          <stop offset="60%" stop-color="#111111"/>
+          <stop offset="100%" stop-color="#050505"/>
+        </linearGradient>
+        <linearGradient id="carRoof" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#333333"/>
+          <stop offset="100%" stop-color="#0d0d0d"/>
+        </linearGradient>
+        <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#87ceeb" stop-opacity=".8"/>
+          <stop offset="100%" stop-color="#4a90d9" stop-opacity=".5"/>
+        </linearGradient>
+        <radialGradient id="wheelGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#555"/>
+          <stop offset="60%" stop-color="#222"/>
+          <stop offset="100%" stop-color="#111"/>
+        </radialGradient>
+        <linearGradient id="ground2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#e8d5e0" stop-opacity=".4"/>
+          <stop offset="100%" stop-color="#e8d5e0" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="glow2">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- Road reflection -->
+      <ellipse cx="300" cy="182" rx="220" ry="12" fill="url(#ground2)"/>
+      <rect x="80" y="175" width="440" height="6" rx="3" fill="rgba(194,24,91,0.06)"/>
+
+      <!-- Car shadow -->
+      <ellipse cx="300" cy="180" rx="200" ry="10" fill="rgba(0,0,0,0.15)"/>
+
+      <!-- Main body (SUV shape) -->
+      <path d="M70 150 L70 120 Q72 108 90 100 L160 80 Q190 55 260 50 L360 50 Q420 52 450 70 L510 95 Q528 102 532 120 L532 150Z"
+            fill="url(#carBody)" stroke="#1a1a1a" stroke-width="1"/>
+
+      <!-- Roof highlight -->
+      <path d="M160 80 Q215 57 270 52 L360 52 Q415 54 445 70 L505 95 Q440 90 360 88 L240 90 Z"
+            fill="rgba(255,255,255,0.06)"/>
+
+      <!-- Windows -->
+      <!-- Front windscreen -->
+      <path d="M440 72 L508 96 L505 118 L430 112 Z" fill="url(#glass)"/>
+      <path d="M440 72 L508 96 L505 118 L430 112 Z" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+
+      <!-- Front window -->
+      <path d="M365 54 L432 68 L428 112 L358 112 Z" fill="url(#glass)"/>
+      <line x1="365" y1="54" x2="432" y2="68" stroke="rgba(255,255,255,0.2)" stroke-width=".8"/>
+
+      <!-- Rear window -->
+      <path d="M262 52 L358 54 L356 112 L258 112 Z" fill="url(#glass)"/>
+
+      <!-- Driver + passenger silhouettes -->
+      <ellipse cx="400" cy="82" rx="14" ry="14" fill="rgba(0,0,0,0.5)"/>
+      <ellipse cx="300" cy="80" rx="14" ry="14" fill="rgba(0,0,0,0.4)"/>
+      <!-- Floral/heart on glass -->
+      <text x="300" y="108" text-anchor="middle" font-size="16" opacity=".6">💕</text>
+
+      <!-- Door panels -->
+      <line x1="260" y1="50" x2="262" y2="152" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+      <line x1="360" y1="50" x2="360" y2="152" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+      <line x1="430" y1="68" x2="430" y2="152" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+
+      <!-- Door handles -->
+      <rect x="300" y="125" width="30" height="6" rx="3" fill="#555"/>
+      <rect x="385" y="125" width="28" height="6" rx="3" fill="#555"/>
+
+      <!-- Body lower stripe / sill -->
+      <rect x="88" y="143" width="442" height="8" rx="2" fill="#0d0d0d" stroke="rgba(194,24,91,0.3)" stroke-width=".5"/>
+
+      <!-- Skoda grille + front -->
+      <path d="M70 110 L90 100 L95 152 L70 150Z" fill="#0a0a0a" stroke="#1a1a1a" stroke-width="1"/>
+      <!-- Grille pattern -->
+      <rect x="72" y="108" width="18" height="35" rx="2" fill="#111" stroke="#c2185b" stroke-width=".5" opacity=".8"/>
+      <line x1="72" y1="116" x2="88" y2="116" stroke="#c2185b" stroke-width=".5" opacity=".5"/>
+      <line x1="72" y1="124" x2="88" y2="124" stroke="#c2185b" stroke-width=".5" opacity=".5"/>
+      <line x1="72" y1="132" x2="88" y2="132" stroke="#c2185b" stroke-width=".5" opacity=".5"/>
+      <!-- Skoda logo -->
+      <circle cx="81" cy="104" r="8" fill="#111" stroke="#c2185b" stroke-width=".8"/>
+      <text x="81" y="108" text-anchor="middle" font-size="9" fill="#c2185b" font-weight="bold">S</text>
+      <!-- Headlights (LED style) -->
+      <path d="M72 100 Q82 94 95 98" fill="none" stroke="#FFD700" stroke-width="3" stroke-linecap="round" filter="url(#glow2)" opacity=".9"/>
+      <ellipse cx="80" cy="100" rx="6" ry="4" fill="#FFE082" opacity=".7"/>
+      <!-- DRL line -->
+      <line x1="85" y1="112" x2="94" y2="114" stroke="#fff" stroke-width="1.5" opacity=".6"/>
+
+      <!-- Rear -->
+      <path d="M532 120 L532 150 L526 152 L520 110Z" fill="#0a0a0a"/>
+      <!-- Tail lights -->
+      <rect x="522" y="110" width="10" height="22" rx="2" fill="#c2185b" opacity=".8"/>
+      <rect x="523" y="112" width="8" height="8" rx="1" fill="#ff5252" opacity=".9"/>
+      <!-- Exhaust -->
+      <rect x="500" y="148" width="28" height="5" rx="2.5" fill="#333"/>
+      <ellipse cx="528" cy="150" rx="5" ry="3" fill="rgba(200,200,200,0.3)"/>
+
+      <!-- Skoda badge rear -->
+      <circle cx="526" cy="97" r="7" fill="#111" stroke="#c2185b" stroke-width=".8"/>
+      <text x="526" y="101" text-anchor="middle" font-size="8" fill="#c2185b" font-weight="bold">S</text>
+
+      <!-- Wheels (front) -->
+      <circle cx="155" cy="158" r="32" fill="url(#wheelGrad)" stroke="#333" stroke-width="2"/>
+      <circle cx="155" cy="158" r="22" fill="none" stroke="#444" stroke-width="8"/>
+      <circle cx="155" cy="158" r="10" fill="#222" stroke="#555" stroke-width="2"/>
+      <!-- Spokes front -->
+      <line x1="155" y1="136" x2="155" y2="180" stroke="#555" stroke-width="2.5"/>
+      <line x1="133" y1="158" x2="177" y2="158" stroke="#555" stroke-width="2.5"/>
+      <line x1="139" y1="142" x2="171" y2="174" stroke="#555" stroke-width="2"/>
+      <line x1="171" y1="142" x2="139" y2="174" stroke="#555" stroke-width="2"/>
+      <!-- Wheel glint -->
+      <circle cx="148" cy="148" r="3" fill="rgba(255,255,255,0.25)"/>
+
+      <!-- Wheels (rear) -->
+      <circle cx="448" cy="158" r="32" fill="url(#wheelGrad)" stroke="#333" stroke-width="2"/>
+      <circle cx="448" cy="158" r="22" fill="none" stroke="#444" stroke-width="8"/>
+      <circle cx="448" cy="158" r="10" fill="#222" stroke="#555" stroke-width="2"/>
+      <line x1="448" y1="136" x2="448" y2="180" stroke="#555" stroke-width="2.5"/>
+      <line x1="426" y1="158" x2="470" y2="158" stroke="#555" stroke-width="2.5"/>
+      <line x1="432" y1="142" x2="464" y2="174" stroke="#555" stroke-width="2"/>
+      <line x1="464" y1="142" x2="432" y2="174" stroke="#555" stroke-width="2"/>
+      <circle cx="441" cy="148" r="3" fill="rgba(255,255,255,0.25)"/>
+
+      <!-- Roof rack / antenna -->
+      <rect x="200" y="47" width="140" height="4" rx="2" fill="#1a1a1a" stroke="#333" stroke-width=".5"/>
+      <line x1="340" y1="48" x2="345" y2="35" stroke="#333" stroke-width="1"/>
+      <circle cx="345" cy="34" r="2" fill="#555"/>
+
+      <!-- Rose on dashboard visible through windscreen -->
+      <text x="465" y="116" text-anchor="middle" font-size="12" opacity=".5">🌹</text>
+    </svg>
+
+    <div class="chariot-subtitle">
+      Your throne for the day — sleek, powerful, and as elegant as you are.<br>
+      <span style="color:var(--gold);font-size:14px;">✦ Skoda Kylaq · Deep Black Edition · Jul 04, 2026 ✦</span>
+    </div>
+  </div>
+
+  <!-- ITINERARY -->
+  <div class="section-title reveal">
+    <h2>Our <span>Day</span> — Hour by Hour</h2>
+    <div class="title-line"></div>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item" style="animation-delay:.1s">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-time">🌅 5:00 AM</div>
+        <div class="tl-event">I arrive at your doorstep</div>
+        <div class="tl-note">Hot chai in the thermos, music playing softly — just for you.</div>
+      </div>
+    </div>
+    <div class="tl-item" style="animation-delay:.2s">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-time">🚗 5:15 AM</div>
+        <div class="tl-event">Bengaluru → Open Road</div>
+        <div class="tl-note">We slip out of the city before it wakes. NH 275 unfolds ahead of us.</div>
+      </div>
+    </div>
+    <div class="tl-item" style="animation-delay:.3s">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-time">🌄 7:00 AM</div>
+        <div class="tl-event">Mysuru Pitstop</div>
+        <div class="tl-note">Breakfast at a quiet café. Mysore pak and filter coffee — a must.</div>
+      </div>
+    </div>
+    <div class="tl-item" style="animation-delay:.4s">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-time">⛪ 9:00 AM</div>
+        <div class="tl-event">Gopalaswamy Betta</div>
+        <div class="tl-note">We ascend into the mist. Temple bells, wildflowers, and silence. Together above the clouds.</div>
+      </div>
+    </div>
+    <div class="tl-item" style="animation-delay:.5s">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-time">🍃 12:30 PM</div>
+        <div class="tl-event">Picnic Lunch</div>
+        <div class="tl-note">A quiet spot with a forest view. Homemade love, packed with care.</div>
+      </div>
+    </div>
+    <div class="tl-item" style="animation-delay:.6s">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-time">🐘 2:00 PM</div>
+        <div class="tl-event">Bandipura Safari</div>
+        <div class="tl-note">Into the jungle on a jeep — elephants, deer, and the golden light of afternoon.</div>
+      </div>
+    </div>
+    <div class="tl-item" style="animation-delay:.7s">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-time">🌇 5:30 PM</div>
+        <div class="tl-event">Sunset at the Forest Edge</div>
+        <div class="tl-note">The sky turns gold, the jungle breathes. We watch it together.</div>
+      </div>
+    </div>
+    <div class="tl-item" style="animation-delay:.8s">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-time">🏠 9:00 PM</div>
+        <div class="tl-event">Home, with memories</div>
+        <div class="tl-note">Stars above us all the way. Every mile, a story. Every moment, ours.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RSVP -->
+  <div class="rsvp-section reveal">
+    <p class="rsvp-question">So, my <span>Pooja</span>…</p>
+    <p class="rsvp-sub">Will you say yes to this day written just for you? 💕</p>
+
+    <div id="rsvpArea">
+      <div class="btn-wrap" id="btnWrap">
+        <button class="btn-yes" onclick="handleYes()">Yes, my love! 💕</button>
+        <button class="btn-no" id="noBtn" onmouseenter="runAway()" ontouchstart="runAway()">No</button>
+      </div>
+    </div>
+
+    <div class="yes-message" id="yesMsg">
+      <div class="yes-emoji">🥰</div>
+      <div class="yes-text">She said YES! 💕</div>
+      <div class="yes-sub">July 4th, 2026 — marked in our hearts forever. Can't wait to be by your side, Pooja. ✨</div>
+      <div style="margin-top:20px;font-size:40px;animation:bounce 1s infinite;">💍💕🌿</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Made with every heartbeat, just for you 💕
+  </div>
+
+</div>
+
+<script>
+  // ── PETALS ──
+  const petalLayer = document.getElementById('petalLayer');
+  const petalSymbols = ['🌸','🌺','🌹','💮','🌷','✿','❀'];
+  for (let i = 0; i < 22; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.textContent = petalSymbols[Math.floor(Math.random() * petalSymbols.length)];
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = (8 + Math.random() * 14) + 's';
+    p.style.animationDelay = (Math.random() * 14) + 's';
+    p.style.fontSize = (12 + Math.random() * 14) + 'px';
+    petalLayer.appendChild(p);
+  }
+
+  // ── SCROLL REVEAL ──
+  const revealEls = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => obs.observe(el));
+
+  // ── MUSIC ──
+  let musicOn = false;
+  const ytFrame = document.getElementById('ytFrame');
+  const musicLabel = document.getElementById('musicLabel');
+
+  function toggleMusic() {
+    if (!musicOn) {
+      ytFrame.src = 'https://www.youtube.com/embed/q_Mko66Fnhc?autoplay=1&loop=1&playlist=q_Mko66Fnhc&controls=0&mute=0';
+      musicLabel.textContent = '⏸ Ninnindale ♪';
+      musicOn = true;
+    } else {
+      ytFrame.src = '';
+      musicLabel.textContent = 'Play ♪ Ninnindale';
+      musicOn = false;
     }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+  }
 
-    const track = document.getElementById('carouselTrack');
-    const slides = Array.from(track.children);
-    const dotsWrap = document.getElementById('carouselDots');
-    const prevSlide = document.getElementById('prevSlide');
-    const nextSlide = document.getElementById('nextSlide');
-    let currentSlide = 0;
-    let carouselTimer;
+  // ── NO BUTTON ESCAPE ──
+  const noBtn = document.getElementById('noBtn');
+  const btnWrap = document.getElementById('btnWrap');
 
-    slides.forEach((_, index) => {
-      const dot = document.createElement('button');
-      dot.className = 'dot';
-      dot.type = 'button';
-      dot.setAttribute('aria-label', `Show gallery image ${index + 1}`);
-      dot.addEventListener('click', () => goToSlide(index));
-      dotsWrap.appendChild(dot);
-    });
-    const dots = Array.from(dotsWrap.children);
+  let escapeCount = 0;
+  const escapePhrases = ['No','Nope 😅','Try again!','Nahh~','Too slow! 😄','Nuh-uh 💨','Run run run!','Catch me? 😜','Not a chance!'];
 
-    function goToSlide(index) {
-      currentSlide = (index + slides.length) % slides.length;
-      track.style.transform = `translateX(-${currentSlide * 100}%)`;
-      dots.forEach((dot, dotIndex) => dot.classList.toggle('active', dotIndex === currentSlide));
-      restartCarousel();
+  function runAway() {
+    escapeCount++;
+    const wrapRect = btnWrap.getBoundingClientRect();
+    const btnRect = noBtn.getBoundingClientRect();
+    const wrapW = btnWrap.offsetWidth;
+    const wrapH = btnWrap.offsetHeight;
+
+    const maxLeft = wrapW - noBtn.offsetWidth;
+    const maxTop = wrapH - noBtn.offsetHeight;
+
+    let newLeft = Math.random() * maxLeft;
+    let newTop = (Math.random() - 0.5) * 120;
+
+    noBtn.style.position = 'absolute';
+    noBtn.style.left = newLeft + 'px';
+    noBtn.style.top = newTop + 'px';
+    noBtn.style.transform = 'none';
+    noBtn.style.transition = 'left .2s, top .2s';
+
+    noBtn.textContent = escapePhrases[escapeCount % escapePhrases.length];
+    noBtn.style.fontSize = Math.max(10, 22 - escapeCount * 1.5) + 'px';
+    noBtn.style.opacity = Math.max(0.2, 1 - escapeCount * 0.08);
+  }
+
+  function handleYes() {
+    document.getElementById('rsvpArea').style.display = 'none';
+    const yes = document.getElementById('yesMsg');
+    yes.classList.add('show');
+    // shower of hearts
+    for (let i = 0; i < 30; i++) {
+      setTimeout(() => {
+        const h = document.createElement('div');
+        h.className = 'petal';
+        h.textContent = ['💕','💖','💗','💓','❤️','🌸'][Math.floor(Math.random()*6)];
+        h.style.left = Math.random() * 100 + 'vw';
+        h.style.animationDuration = (3 + Math.random() * 5) + 's';
+        h.style.fontSize = (16 + Math.random() * 20) + 'px';
+        petalLayer.appendChild(h);
+      }, i * 100);
     }
-    function next() { goToSlide(currentSlide + 1); }
-    function restartCarousel() {
-      clearInterval(carouselTimer);
-      carouselTimer = setInterval(next, 4200);
-    }
-    prevSlide.addEventListener('click', () => goToSlide(currentSlide - 1));
-    nextSlide.addEventListener('click', next);
-    goToSlide(0);
+  }
 
-    function moveNoButton(event) {
-      event.preventDefault();
-      noAttempts += 1;
-      noBtn.classList.add('runaway');
-      const safePadding = 18;
-      const maxX = Math.max(safePadding, window.innerWidth - noBtn.offsetWidth - safePadding);
-      const maxY = Math.max(safePadding, window.innerHeight - noBtn.offsetHeight - safePadding);
-      const x = Math.floor(Math.random() * maxX);
-      const y = Math.floor(Math.random() * maxY);
-      noBtn.style.left = `${x}px`;
-      noBtn.style.top = `${y}px`;
-      noBtn.style.transform = `rotate(${Math.random() * 18 - 9}deg) scale(${0.94 + Math.random() * 0.12})`;
-      if (noAttempts >= 10) showToast('Looks like destiny already chose YES ❤️');
-    }
-    ['mouseenter', 'mouseover', 'touchstart', 'pointerdown', 'focus', 'click'].forEach((eventName) => {
-      noBtn.addEventListener(eventName, moveNoButton, { passive: false });
-    });
-
-    function showToast(message) {
-      toast.textContent = message;
-      toast.classList.add('show');
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
-    }
-
-    function launchFallingLove() {
-      const icons = ['❤️', '🌹', '💖', '🌸', '💘'];
-      for (let i = 0; i < 90; i++) {
-        const item = document.createElement('span');
-        item.className = 'falling';
-        item.textContent = icons[Math.floor(Math.random() * icons.length)];
-        item.style.left = `${Math.random() * 100}vw`;
-        item.style.animationDuration = `${3 + Math.random() * 4}s`;
-        item.style.animationDelay = `${Math.random() * 1.1}s`;
-        item.style.fontSize = `${18 + Math.random() * 24}px`;
-        fallingLayer.appendChild(item);
-        setTimeout(() => item.remove(), 8200);
-      }
-    }
-
-    function confettiExplosion() {
-      const duration = 3600;
-      const end = Date.now() + duration;
-      (function frame() {
-        confetti({ particleCount: 6, angle: 60, spread: 70, origin: { x: 0 }, colors: ['#ff2f86', '#ff3158', '#ffd166', '#ffffff'] });
-        confetti({ particleCount: 6, angle: 120, spread: 70, origin: { x: 1 }, colors: ['#ff2f86', '#ff3158', '#ffd166', '#ffffff'] });
-        confetti({ particleCount: 2, spread: 100, startVelocity: 34, origin: { x: Math.random(), y: Math.random() - 0.2 }, colors: ['#ff6ea9', '#ffd166', '#fffafc'] });
-        if (Date.now() < end) requestAnimationFrame(frame);
-      }());
-    }
-
-    yesBtn.addEventListener('click', () => {
-      confettiExplosion();
-      launchFallingLove();
-      document.body.classList.add('modal-open');
-      yesModal.classList.add('show');
-      closeModal.focus();
-    });
-    closeModal.addEventListener('click', () => {
-      yesModal.classList.remove('show');
-      document.body.classList.remove('modal-open');
-    });
-    yesModal.addEventListener('click', (event) => {
-      if (event.target === yesModal) closeModal.click();
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && yesModal.classList.contains('show')) closeModal.click();
-    });
-  </script>
+  // Timeline reveal on scroll
+  document.querySelectorAll('.tl-item').forEach((el, i) => {
+    const tlObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          e.target.style.transition = `opacity .7s ${i * 0.1}s, transform .7s ${i * 0.1}s`;
+        }
+      });
+    }, { threshold: 0.2 });
+    el.style.transform = 'translateY(20px)';
+    tlObs.observe(el);
+  });
+</script>
 </body>
 </html>
