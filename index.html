@@ -30,6 +30,8 @@
       --radius-lg: 24px;
       --radius-md: 18px;
       --max: 1180px;
+      --cloud-bg: url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2400&q=90");
+      --cloud-bg-soft: url("https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=2400&q=90");
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,8 +52,9 @@
       position: fixed;
       inset: 0;
       z-index: -3;
-      background: linear-gradient(135deg, rgba(7, 3, 11, 0.9), rgba(48, 4, 34, 0.62)),
-        url("https://images.unsplash.com/photo-1542385150-f38b5d38ccb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=85") center/cover no-repeat;
+      background:
+        linear-gradient(135deg, rgba(7, 3, 11, 0.66), rgba(20, 39, 72, 0.46), rgba(48, 4, 34, 0.56)),
+        var(--cloud-bg) center/cover no-repeat;
       transform: scale(1.03);
     }
     body::after {
@@ -94,15 +97,15 @@
       animation: heroFade 18s infinite;
       filter: saturate(1.12) contrast(1.08);
     }
-    .hero-slide:nth-child(1) { background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=85"); animation-delay: 0s; }
-    .hero-slide:nth-child(2) { background-image: url("https://imgd.aeplcdn.com/664x374/n/k6tblib_1902685.jpg?q=80"); animation-delay: 6s; }
-    .hero-slide:nth-child(3) { background-image: url("https://www.tirthayatra.org/wp-content/uploads/2022/01/10-scaled.jpg"); animation-delay: 12s; }
+    .hero-slide:nth-child(1) { background-image: var(--cloud-bg); animation-delay: 0s; }
+    .hero-slide:nth-child(2) { background-image: var(--cloud-bg-soft); animation-delay: 6s; }
+    .hero-slide:nth-child(3) { background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2400&q=90"); animation-delay: 12s; }
     .hero-overlay::before {
       content: "";
       position: absolute;
       inset: 0;
       z-index: -3;
-      background: linear-gradient(180deg, rgba(0,0,0,.72), rgba(24,0,20,.58), rgba(0,0,0,.82));
+      background: linear-gradient(180deg, rgba(0,0,0,.56), rgba(12,32,58,.42), rgba(0,0,0,.72));
     }
     .hero-overlay::after {
       content: "";
@@ -431,8 +434,8 @@
     </div>
   </div>
 
-  <audio id="loveSong" preload="auto" loop title="Ninna Danigaagi">
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+  <audio id="loveSong" preload="auto" loop title="Ninnidale Kannada Song">
+    <source src="assets/audio/ninnidale-kannada-song.mp3" type="audio/mpeg" />
   </audio>
   <button class="music-toggle" id="musicToggle" aria-pressed="false">🎵 Music Off</button>
   <div class="toast" id="toast">Looks like destiny already chose YES ❤️</div>
